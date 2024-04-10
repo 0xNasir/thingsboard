@@ -1,0 +1,92 @@
+<div class="wrapper" *ngIf="deviceData">
+  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="0.25%">
+    <div fxFlex="39.75" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="0.5%">
+      <div fxFlex="49.75" fxFlex.lt-sm="100">
+        <mat-card class="h-full">
+          <mat-card-header>
+            <mat-card-subtitle>Today's total Consumption</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            @if (showingSpin){
+              <mat-spinner></mat-spinner>
+            } @else {
+              <h1>{{ totalTodaysConsumption | number: '1.2-2' }} kWh</h1>
+              @if (totalYesterdayConsumption>totalTodaysConsumption){
+                <p class="text-blue-400"><mat-icon style="height: 15px; width: 16px; font-size: 18px;">arrow_downward</mat-icon> {{ ((totalYesterdayConsumption-totalTodaysConsumption)/totalYesterdayConsumption)*100 | number: '1.2-2' }}% less than yesterday</p>
+              } @else if (totalTodaysConsumption>totalYesterdayConsumption) {
+                <p class="text-red-600"><mat-icon style="height: 15px; width: 16px; font-size: 18px;">arrow_upward</mat-icon>
+                  {{ ((totalTodaysConsumption-totalYesterdayConsumption)/totalTodaysConsumption)*100 | number: '1.2-2' }}% more than yesterday</p>
+              }
+              <mat-divider></mat-divider>
+              <mat-card-subtitle>Yesterday</mat-card-subtitle>
+              <h2>{{totalYesterdayConsumption | number: '1.2-2'}} kWh</h2>
+
+            }
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex="49.75" fxFlex.lt-sm="100">
+        <mat-card class="h-full">
+          <mat-card-header>
+            <mat-card-subtitle>Last 7 days Consumption</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            @if (showingSpin){
+              <mat-spinner></mat-spinner>
+            } @else {
+              <h1>{{ last7DaysTotal | number: '1.2-2' }} kWh</h1>
+              @if (prev7DaysTotal>last7DaysTotal){
+                <p class="text-blue-400"><mat-icon style="height: 15px; width: 16px; font-size: 18px;">arrow_downward</mat-icon> {{ ((prev7DaysTotal-last7DaysTotal)/prev7DaysTotal)*100 | number: '1.2-2' }}% less than last week</p>
+              } @else if (last7DaysTotal>prev7DaysTotal) {
+                <p class="text-red-600"><mat-icon style="height: 15px; width: 16px; font-size: 18px;">arrow_upward</mat-icon>
+                  {{ ((last7DaysTotal-prev7DaysTotal)/last7DaysTotal)*100 | number: '1.2-2' }}% more than last week</p>
+              }
+              <mat-divider></mat-divider>
+              <mat-card-subtitle>Previous week</mat-card-subtitle>
+              <h2>{{prev7DaysTotal | number: '1.2-2'}} kWh</h2>
+            }
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div fxFlex="59.75" fxFlex.lt-md="49.75" fxFlex.lt-sm="100">
+    <mat-card style="height: 100%;">
+      <mat-card-header>
+        <mat-card-subtitle>Consumption by appliances</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row wrap" fxLayoutGap="1.33%">
+          @for (device of deviceData; track device.name){
+            @if (device.name!='em-gateway'){
+              <div fxFlex="48" fxFlex.lt-sm="100">
+                <div fxLayout fxLayoutAlign="space-between center" class="sdvc" [class]="theme" (click)="gotoDevice(device)">
+                  <div>{{device.label || device.name}}</div>
+                  <div style="font-size: 10px;">{{device?.cWT | number: '1.2-2'}} kW</div>
+                  <div style="font-size: 12px;"><b>{{device?.cEnergy | number: '1.2-2'}} kWh</b></div>
+                  <div><mat-icon
+                    [color]="device?.active?'primary':'warn'">{{ device?.active ? 'check_circle' : 'cancel' }}</mat-icon></div>
+                </div>
+                <mat-progress-bar mode="determinate" [value]="device?.cPercentage"></mat-progress-bar>
+                <mat-divider></mat-divider>
+              </div>
+            }
+          }
+        </div>
+      </mat-card-content>
+    </mat-card>
+    </div>
+  </div>
+  <div class="chart mt-1">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Energy breakdown</mat-card-title>
+        <mat-card-subtitle>Last 24 hours</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <canvas id="consumptionBreakdown" style="height: 300px;"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

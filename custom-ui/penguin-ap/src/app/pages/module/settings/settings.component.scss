@@ -1,0 +1,6 @@
+mat-table {
+  mat-header-row mat-header-cell,
+  mat-row mat-cell{
+    min-width: 150px;
+  }
+}

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body { height: 100%; }
+body { margin: 0; font-family: "Montserrat", sans-serif;; }
+
+
+$my-primary: mat.define-palette(mat.$purple-palette);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$mat-light-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Montserrat',
+  )
+));
+//
+$mat-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(mat.$deep-purple-palette),
+    accent: $my-accent,
+    warn: mat.define-palette(mat.$red-palette),
+  )
+));
+
+@include mat.all-component-themes($mat-light-theme);
+
+.sn-dark {
+  @include mat.all-component-colors($mat-dark-theme);
+}

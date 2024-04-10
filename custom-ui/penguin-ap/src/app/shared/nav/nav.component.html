@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false"
+               [style.width]="(isHandset$ | async) === false?iconOnly()?'70px':'200px':'60%'"
+  >
+    <mat-toolbar style="position: relative;">
+      <img [src]="iconOnly()?'assets/penguin-icon.png':'assets/logo.svg'" style="height: 42px;"  alt="">
+    </mat-toolbar>
+    <mat-nav-list [class]="theme=='dark'?'sn-dark-menu':'sn-light-menu'">
+      <a mat-list-item *ngFor="let item of navList" [routerLink]="item.link" routerLinkActive="active">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <span
+          *ngIf="!iconOnly()" matListItemTitle>{{item.title}}</span>
+      </a>
+    </mat-nav-list>
+    <mat-icon *ngIf="(isHandset$ | async) === false" [class]="theme=='dark'?'expandcollapseBtn docking':'expBtnlt docking'"
+              style="position: absolute; right: 0; top: 50%;"
+              (click)="setIconOnly()">{{iconOnly() ? 'chevron_right' : 'chevron_left'}}</mat-icon>
+  </mat-sidenav>
+  <mat-sidenav-content [style.margin-left]="(isHandset$ | async) === false?opened?iconOnly()?'70px':'200px':'':'auto'">
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggleMat(drawer)">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span fxShow fxHide.lt-md>Penguin Electronics Digital Factory</span>
+      <span fxHide fxShow.lt-md>Penguin - Factory</span>
+      <span style="flex: 1 1 100%"></span>
+      <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>{{theme == 'light' ? 'light_mode' : 'dark_mode'}}</mat-icon>
+      </button>
+      <span fxLayout fxLayoutAlign="center center" fxLayoutGap="5px"><mat-icon>account_circle</mat-icon><span>{{userData.firstName}}</span></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="gotoAccount()">
+          <mat-icon>account_circle</mat-icon>
+          <span>Account</span>
+        </button>
+        <button mat-menu-item (click)="doLogout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+
+    </mat-toolbar>
+    <div>
+      <mat-progress-bar mode="query" color="accent" *ngIf="loading$ | async" style="position: absolute;"></mat-progress-bar>
+    </div>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,53 @@
+<mat-toolbar color="primary" mat-dialog-title>{{title}}
+  <span style="float: right; margin-top: 15px;">
+    <button mat-raised-button (click)="submitForm()" color="primary"><mat-icon>add</mat-icon>Submit</button>
+  </span>
+</mat-toolbar>
+<mat-dialog-content>
+  <p fxLayout fxLayout.lt-md="column" fxLayoutGap="10px" style="margin-top: 7px;">
+    <mat-form-field subscriptSizing="dynamic">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" (dateChange)="getRejectionData()">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field subscriptSizing="dynamic">
+      <mat-label>Select Shift</mat-label>
+      <mat-select [(ngModel)]="selectedShift" (selectionChange)="getRejectionData()">
+        <mat-option value="shift_a">Shift A</mat-option>
+        <mat-option value="shift_b">Shift B</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <div class="popup" *ngIf="isVisible">
+    <form [formGroup]="dataForm" (ngSubmit)="submitForm()">
+      <div formArrayName="dataArray">
+        <div *ngFor="let dataGroup of dataArray.controls; let i = index" [formGroupName]="i">
+          <mat-card style="margin-bottom: 7px;">
+            <mat-card-header style="padding: 5px 5px 0 5px;">
+              <mat-card-subtitle>
+                Hour: {{ hourly_ts[i].name }}-{{ parseInt(hourly_ts[i].name)+1 > 23 ? parseInt(hourly_ts[i].name)+1 - 24 : parseInt(hourly_ts[i].name)+1 }}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content style="padding: 5px">
+              <div fxLayout="row wrap" fxLayoutGap="5px">
+                @for (rejectionType of rejectionTypes; track rejectionType.name) {
+                  <p>
+                    <mat-form-field subscriptSizing="dynamic" [ngStyle]="{'width': rejectionType.name === 'component_description' ? '180px' : rejectionType.name === 'delta_RejectAct' ? '140px' : '70px'}">
+                      <mat-label>{{ rejectionType.name }}</mat-label>
+                      <input matInput [formControlName]="rejectionType.name">
+                      <mat-error>Value is required</mat-error>
+                    </mat-form-field>
+                  </p>
+                }@empty {
+                  <span>Empty list of hours</span>
+                }
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

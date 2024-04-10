@@ -1,0 +1,45 @@
+.sidenav-container {
+  height: 100%;
+}
+.mat-mdc-list-item-title{
+  font-family: "Montserrat", sans-serif;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.sn-dark-menu .mdc-list-item.mdc-list-item--with-one-line:hover {
+  background-color: #262626; /* Change to your desired hover color */
+}
+.sn-dark-menu a.active {
+  background-color: #333333; /* Change to your desired color */
+  border-right: 5px solid purple;
+}
+.sn-light-menu .mdc-list-item.mdc-list-item--with-one-line:hover {
+  background-color: #cbcbcb; /* Change to your desired hover color */
+}
+.sn-light-menu a.active {
+  background-color: #cbcbcb; /* Change to your desired color */
+  border-right: 5px solid purple;
+}
+.expandcollapseBtn:hover{
+  background-color: #333333;
+}
+.expBtnlt{
+  background-color: #9c9c9c;
+}
+.docking{
+  cursor: pointer;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//.docking{display: none; visibility: hidden;}
+//mat-sidenav:hover .docking{display: block;visibility: visible;}

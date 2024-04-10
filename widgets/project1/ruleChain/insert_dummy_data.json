@@ -1,0 +1,52 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "insert dummy data",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 161,
+          "layoutY": 414
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "device 9",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 120,
+          "jsScript": "var msg = { ts_avg_current: Math.random()*100, \tts_avg_pf: Math.random(),\n    ts_avg_voltage_ll: Math.random()*50+100,\n    ts_deltaUnit: Math.random()*10+3,\n    ts_frequency_hz: Math.random()*50+50,\n    ts_total_active_power_kw:Math.random()*100\n};\nvar metadata = { data: 40 };\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "61df7410-cd2d-11ed-8b01-738772f9cc16",
+          "originatorType": "DEVICE"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": [
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "b4e6de80-b5c4-11ed-9002-e38feb9f67d3"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 611,
+          "layoutY": 410,
+          "ruleChainNodeId": "rule-chain-node-3"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}

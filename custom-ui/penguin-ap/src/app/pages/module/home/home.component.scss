@@ -1,0 +1,32 @@
+.home-wrapper {
+  background: url('/assets/factory-floor.png') no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.demo {
+  background-color: #939393;
+  height: 50px;
+  position: relative;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo:after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 15px solid transparent;
+  border-top-color: #939393;
+  top: 90%;
+  left: 50%;
+  margin-left: -14px;
+}
+rect:hover{
+  fill: rgba(147, 147, 147, 0.18);
+  cursor: pointer;
+}

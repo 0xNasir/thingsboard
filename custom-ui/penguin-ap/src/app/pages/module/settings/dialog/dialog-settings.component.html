@@ -1,0 +1,138 @@
+<mat-toolbar color="primary" mat-dialog-title>{{title}}</mat-toolbar>
+<mat-dialog-content>
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()" style="margin-top: 7px;">
+    <div *ngIf="formType=='alarm'">
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Alarm ID</mat-label>
+          <input matInput formControlName="alarmId">
+          <mat-error>Alarm ID is required</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Alarm Title</mat-label>
+          <input matInput formControlName="alarmTitle">
+          <mat-error>Alarm Title is required</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Severity</mat-label>
+          <input matInput formControlName="severity">
+          <mat-error>Severity is required</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Notes</mat-label>
+          <textarea matInput formControlName="notes"></textarea>
+        </mat-form-field>
+      </p>
+    </div>
+    <div *ngIf="formType=='telemetry'">
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Mold Type</mat-label>
+          <input matInput formControlName="moldType">
+          <mat-error>Mold type is required</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title">
+          <mat-error>Title is required</mat-error>
+        </mat-form-field>
+      </p>
+      <div fxLayout fxLayout.lt-md="column" fxLayoutGap="5px">
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Telemetry Key</mat-label>
+            <input matInput formControlName="telemetryKey">
+            <mat-error>Telemetry key is required</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Target</mat-label>
+            <input matInput type="number" formControlName="target">
+            <mat-error>Target is required</mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+      <div fxLayout fxLayout.lt-md="column" fxLayoutGap="5px">
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Min</mat-label>
+            <input matInput type="number" formControlName="min">
+            <mat-error>Min value is required</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Max</mat-label>
+            <input matInput type="number" formControlName="max">
+            <mat-error>Max value is required</mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Fault ID</mat-label>
+          <input matInput formControlName="faultId">
+        </mat-form-field>
+      </p>
+    </div>
+    <div *ngIf="formType=='emForm'">
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+          <mat-error>Name is required</mat-error>
+        </mat-form-field>
+      </p>
+      <div fxLayout fxLayout.lt-md="column" fxLayoutGap="5px">
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Telemetry Key</mat-label>
+            <input matInput formControlName="telemetryKey">
+            <mat-error>Telemetry key is required</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Target</mat-label>
+            <input matInput type="number" formControlName="target">
+            <mat-error>Target is required</mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+      <div fxLayout fxLayout.lt-md="column" fxLayoutGap="5px">
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Min</mat-label>
+            <input matInput type="number" formControlName="min">
+            <mat-error>Min value is required</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="w-full">
+            <mat-label>Max</mat-label>
+            <input matInput type="number" formControlName="max">
+            <mat-error>Max value is required</mat-error>
+          </mat-form-field>
+        </p>
+      </div>
+      <p>
+        <mat-form-field class="w-full">
+          <mat-label>Fault ID</mat-label>
+          <input matInput formControlName="faultId">
+        </mat-form-field>
+      </p>
+    </div>
+    <mat-dialog-actions align="end">
+      <button mat-flat-button>Save</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>

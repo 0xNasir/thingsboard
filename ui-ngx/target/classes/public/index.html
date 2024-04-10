@@ -1,0 +1,245 @@
+<!--
+
+    Copyright © 2016-2023 The Thingsboard Authors
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!doctype html>
+<html lang="en" style="width: 100%; height: 100%;">
+<head>
+  <meta charset="utf-8">
+  <title>DEV-SYNCROSS</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="syncross.ico">
+  <link rel="preload" href="assets/fonts/MaterialIcons-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous"/>
+  <link rel="preload" href="assets/fonts/MaterialIconsRound-Regular.otf" as="font" type="font/otf" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="assets/fonts/material-icons.css"/>
+  <style type="text/css">
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background-color: #eee;
+    }
+
+    .tb-loading-spinner {
+      margin: auto;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 200px;
+      height: 30px;
+      text-align: center;
+    }
+    .st0 {
+      fill: #c00;
+    }
+
+    .st1 {
+      fill: none;
+      stroke: #c00;
+      stroke-width: 3;
+      stroke-miterlimit: 10;
+    }
+    .tb-loading-spinner > div {
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+      background-color: #c00;
+
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: tb-bouncedelay 1.4s infinite ease-in-out both;
+      -moz-animation: tb-bouncedelay 1.4s infinite ease-in-out both;
+      animation: tb-bouncedelay 1.4s infinite ease-in-out both;
+    }
+
+    .tb-loading-spinner .tb-bounce1 {
+      -webkit-animation-delay: -0.32s;
+      -moz-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .tb-loading-spinner .tb-bounce2 {
+      -webkit-animation-delay: -0.16s;
+      -moz-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+
+    @-webkit-keyframes tb-bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+
+    @-moz-keyframes tb-bouncedelay {
+      0%, 80%, 100% { -moz-transform: scale(0) }
+      40% { -moz-transform: scale(1.0) }
+    }
+
+    @keyframes tb-bouncedelay {
+      0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        transform: scale(0);
+      } 40% {
+          -webkit-transform: scale(1.0);
+          -moz-transform: scale(1.0);
+          transform: scale(1.0);
+        }
+    }
+
+  </style>
+<link rel="stylesheet" href="styles.9b2e3b2e53bc9c68.css"></head>
+<body class="tb-default">
+  <tb-root></tb-root>
+  <div id="tb-loading-spinner" class="tb-loading-spinner">
+    <svg id="Layer_1" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="Syncross-logo-white.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 743.3 143" width="200" height="100" style="enable-background:new 0 0 743.3 143;" space="preserve">
+      <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" id="namedview337" inkscape:current-layer="Layer_1" inkscape:cx="371.33818" inkscape:cy="238.95063" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1013" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:zoom="1.6844484" pagecolor="#ffffff" showgrid="false">
+      </sodipodi:namedview>
+      <g id="g10">
+        <g id="g8">
+          <path id="path6" class="st0" d="M442.6,104.3c-9.4,9.5-21.9,14.7-35.2,14.7c-27.3,0-49.5-22.3-49.5-49.6s22.2-49.6,49.5-49.6
+			c13.2,0,25.7,5.2,35,14.6l-15.8,15.9c-5.1-5.2-12-8-19.2-8c-15,0-27.1,12.2-27.1,27.2s12.2,27.2,27.1,27.2
+			c7.5,0,14.7-3.2,19.9-8.7L442.6,104.3z"/>
+        </g>
+      </g>
+      <g id="g14">
+        <path id="path12" class="st0" d="M560.8,29.9c-21.7,0-39.4,17.7-39.4,39.5s17.7,39.5,39.4,39.5s39.4-17.7,39.4-39.5
+		S582.5,29.9,560.8,29.9z M560.8,90.6c-11.7,0-21.2-9.5-21.2-21.2c0-11.7,9.5-21.2,21.2-21.2c11.7,0,21.2,9.5,21.2,21.2
+		C581.9,81.1,572.4,90.6,560.8,90.6z"/>
+      </g>
+      <g id="g24">
+        <g id="g18">
+          <path id="path16" class="st0" d="M517.7,109.6l-14.1-31.4c-2.8-6.9-6.5-13.2-14.2-13.2H467c-9.6,0-17.3,8.3-17.3,18.6v26.7h19.1
+			V85.6c0-0.5,0.4-0.9,0.9-0.9h14.1c1.3,0,2.4,0.8,3,2l10.9,24.2L517.7,109.6z"/>
+        </g>
+        <g id="g22">
+          <path id="path20" class="st0" d="M508.1,73.7l0.5,1.2l0,0c6.9-7.8,7.3-15.7,7.4-16v-3.3c0-15.1-11.8-26-28.1-26h-38.7v18.9h39.6
+			c5,0,8.7,3,8.7,7.2v1c0,0.3-0.4,2.3-1.9,3.9C502.2,61.6,505.5,67.4,508.1,73.7z"/>
+        </g>
+      </g>
+      <g id="g30">
+        <polygon id="polygon26" class="st0" points="349.9,29.8 332.2,29.8 332.2,71.6 349.9,99.2 	"/>
+        <path id="path28" class="st0" d="M332.2,81.4l-30.6-47.7c-2.6-4-7.2-5.7-11.6-4.3c-4.4,1.4-7.3,5.5-7.3,10.3v69.7h15.8V57.9
+		l24.8,38.2l9.1,13.4l10,0.1l7.4,0V109L332.2,81.4z"/>
+      </g>
+      <g id="g36">
+        <path id="path32" class="st0" d="M250.5,57.4h-9.8c-4.7,0-8.5-5-8.5-11.2V30.5h-15.7v18.7c0,15.7,9.8,28.6,21.9,28.6h1.2
+		c0.6-2.2,1.2-4.4,1.9-6.3C244.2,63.8,247.8,60.1,250.5,57.4z"/>
+        <path id="path34" class="st0" d="M259.6,29.8v16.7c0,6.8-1,7.8-3.7,10.4c-0.2,0.2-0.3,0.3-0.5,0.5c-2.7,2.7-6.3,6.4-9,13.9
+		c-0.7,2-1.3,4.1-1.9,6.3c-2.9,11.5-3.7,25.2-2.9,32.3h16.1c-0.8-5.7,0-23,3.7-33.3c1.6-4.5,3.3-6.2,5.5-8.3
+		c4.9-4.7,8.6-9.3,8.6-21.9V29.8H259.6z"/>
+      </g>
+      <g id="g40">
+        <path id="path38" class="st0" d="M195,48l15.5-12.2c-5.8-4.7-13.5-7.4-21.6-7.4c-16.9,0-30.7,11.4-30.7,25.4
+		c0,12.4,11.1,23.1,25.8,25v0c4.2,0.6,7.2,3.4,7.2,6.8c0,3.8-3.9,6.9-8.7,6.9c-2.4,0-4.6-0.8-6.3-2.1l-15.4,13.2
+		c5.8,4.8,13.5,7.4,21.7,7.4c16.9,0,30.7-11.4,30.7-25.4c0-12.4-10.7-22.9-25.6-25l0,0c-4.3-0.5-7.5-3.4-7.5-6.8
+		c0-3.8,3.9-6.9,8.7-6.9c2.4,0,4.6,0.7,6.3,2.1"/>
+      </g>
+      <g id="g44">
+        <path id="path42" class="st0" d="M642.2,48l15.5-12.2c-5.8-4.7-13.5-7.4-21.6-7.4c-16.9,0-30.7,11.4-30.7,25.4
+		c0,12.4,11.1,23.1,25.8,25v0c4.2,0.6,7.2,3.4,7.2,6.8c0,3.8-3.9,6.9-8.7,6.9c-2.4,0-4.6-0.8-6.3-2.1l-15.4,13.2
+		c5.8,4.8,13.5,7.4,21.7,7.4c16.9,0,30.7-11.4,30.7-25.4c0-12.4-10.7-22.9-25.6-25l0,0c-4.3-0.5-7.5-3.4-7.5-6.8
+		c0-3.8,3.9-6.9,8.7-6.9c2.4,0,4.6,0.7,6.3,2.1"/>
+      </g>
+      <g id="g48">
+        <path id="path46" class="st0" d="M696.8,48l15.5-12.2c-5.8-4.7-13.5-7.4-21.6-7.4c-16.9,0-30.7,11.4-30.7,25.4
+		c0,12.4,11.1,23.1,25.8,25v0c4.2,0.6,7.2,3.4,7.2,6.8c0,3.8-3.9,6.9-8.7,6.9c-2.4,0-4.6-0.8-6.3-2.1l-15.4,13.2
+		c5.8,4.8,13.5,7.4,21.7,7.4c16.9,0,30.7-11.4,30.7-25.4c0-12.4-10.7-22.9-25.6-25l0,0c-4.3-0.5-7.5-3.4-7.5-6.8
+		c0-3.8,3.9-6.9,8.7-6.9c2.4,0,4.6,0.7,6.3,2.1"/>
+      </g>
+      <g id="g228">
+        <g id="g142">
+          <line id="line140" class="st1" x1="17.9" y1="69" x2="142.7" y2="69"/>
+        </g>
+        <g id="g146">
+          <ellipse id="circle144" class="st0" cx="17.9" cy="69" rx="2.9" ry="2.9"/>
+        </g>
+        <g id="g184">
+          <g id="g150">
+            <polyline id="polyline148" class="st1" points="24.6,60 109.8,60 130.3,39.3 135.9,39.3 			"/>
+          </g>
+          <g id="g154">
+            <polyline id="polyline152" class="st1" points="50.6,50.9 107.6,50.9 128.6,30 136.4,30 			"/>
+          </g>
+          <g id="g158">
+            <polyline id="polyline156" class="st1" points="135.5,21.9 123.9,21.9 104.3,41.6 59,41.6 			"/>
+          </g>
+          <g id="g162">
+            <ellipse id="circle160" class="st0" cx="50.6" cy="50.9" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g166">
+            <ellipse id="circle164" class="st0" cx="24.6" cy="60" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g170">
+            <ellipse id="circle168" class="st0" cx="59.1" cy="41.4" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g174">
+            <ellipse id="circle172" class="st0" cx="135.5" cy="21.9" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g178">
+            <ellipse id="circle176" class="st0" cx="136.4" cy="30" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g182">
+            <ellipse id="circle180" class="st0" cx="135.9" cy="39.3" rx="2.9" ry="2.9"/>
+          </g>
+        </g>
+        <g id="g222">
+          <g id="g188">
+            <polyline id="polyline186" class="st1" points="24.6,78 109.8,78 130.3,98.6 135.9,98.6 			"/>
+          </g>
+          <g id="g192">
+            <polyline id="polyline190" class="st1" points="50.6,87 107.6,87 128.6,108 136.4,108 			"/>
+          </g>
+          <g id="g196">
+            <polyline id="polyline194" class="st1" points="135.5,116.1 123.9,116.1 104.3,96.4 59,96.4 			"/>
+          </g>
+          <g id="g200">
+            <ellipse id="circle198" class="st0" cx="50.6" cy="87" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g204">
+            <ellipse id="circle202" class="st0" cx="24.6" cy="78" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g208">
+            <ellipse id="circle206" class="st0" cx="59.1" cy="96.6" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g212">
+            <ellipse id="circle210" class="st0" cx="135.5" cy="116.1" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g216">
+            <ellipse id="circle214" class="st0" cx="136.4" cy="108" rx="2.9" ry="2.9"/>
+          </g>
+          <g id="g220">
+            <ellipse id="circle218" class="st0" cx="135.9" cy="98.6" rx="2.9" ry="2.9"/>
+          </g>
+        </g>
+        <g id="g226">
+          <ellipse id="circle224" class="st0" cx="142.7" cy="68.8" rx="7.2" ry="7.2"/>
+        </g>
+      </g>
+    </svg>
+    <div class="tb-bounce1"></div>
+    <div class="tb-bounce2"></div>
+    <div class="tb-bounce3"></div>
+  </div>
+  <script src="assets/content-22/tailwindcss/tailwind3.3.5.js"></script>
+  <script src="assets/content-22/2023kjjf4j55.main.jjaowi8a8d8df45.js"></script>
+  <link rel="stylesheet" href="assets/content-22/satl.config.css">
+<script src="runtime.08b6993a77feb67f.js" type="module"></script><script src="polyfills.0507304945bea4e4.js" type="module"></script><script src="scripts.13a624324a618349.js" defer></script><script src="vendor.f85194cfffd980b7.js" type="module"></script><script src="main.948769342819de9e.js" type="module"></script></body>
+</html>

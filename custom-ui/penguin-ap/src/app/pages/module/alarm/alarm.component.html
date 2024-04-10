@@ -1,0 +1,59 @@
+<div fxLayout fxLayoutAlign="space-between center" class="ml-1 mr-1 mb-2">
+  <div class="text-lg">{{ totalAlarm }} Alarms in {{year}}</div>
+  <div><button mat-flat-button color="primary" style="margin-right: 20px;" (click)="changeYear('dec')"><</button><button mat-flat-button color="primary" (click)="changeYear('inc')" [disabled]="cYear==year">></button></div>
+</div>
+
+<div fxLayout fxLayoutGap="12px" style="border: 1px solid; padding: 10px;overflow: auto" [style.border-color]="bgColor">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="18px">
+    <div>Mon</div>
+    <div>Wed</div>
+    <div>Fri</div>
+  </div>
+  <div fxLayout fxLayoutGap="-16px">
+    <div *ngFor="let month of dataArray">
+      <div class="text-center month" [id]="month.month.toLowerCase()" (click)="monthSelected(month.month)">{{month.month}}</div>
+      <div *ngFor="let obj of month.dates" fxLayout>
+        <div *ngFor="let data of obj" style="width: 12px; height: 12px; border-radius: 2px;margin: 2px; border: 4px solid transparent;" [style.z-index]="data.value==-1?'0':'5'" [style.background-color]="selectedStartDate<=dtObjFromStr(data.date)&&selectedEndDate>=dtObjFromStr(data.date)?'#00ee5d':getBgColor(data.value)" [attr.data-month]="month.month" [class]="{'hasData':data.value!=-1, 'noData': data.value==-1, 'active': selectedStartDate<=dtObjFromStr(data.date)&&selectedEndDate>=dtObjFromStr(data.date)}" [matTooltip]="showToolTip(data)" (click)="getAlarms(data)"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div fxLayout fxLayoutAlign="flex-end center">
+  <div>Less</div>
+  <div style="width: 12px; height: 12px; border-radius: 2px; margin: 2px;" [style.background-color]="bgColor"></div>
+  <div style="width: 12px; height: 12px; border-radius: 2px; margin: 2px; background-color: #ff0000"></div>
+  <div style="width: 12px; height: 12px; border-radius: 2px; margin: 2px; background-color: #b70000"></div>
+  <div style="width: 12px; height: 12px; border-radius: 2px; margin: 2px; background-color: #850000"></div>
+  <div style="width: 12px; height: 12px; border-radius: 2px; margin: 2px; background-color: #6b0000"></div>
+  <div style="width: 12px; height: 12px; border-radius: 2px; margin: 2px; background-color: #0a0a0a"></div>
+  <div>More</div>
+</div>
+<div fxLayout fxLayoutGap="50px">
+  <p class="text-lg" fxLayoutAlign="flex-end center">Alarm breakdown: <span *ngIf="selectedStartDate">{{ selectedStartDate|date: 'short' }}</span><span *ngIf="selectedStartDate==undefined">Select a date</span></p>
+  <mat-form-field>
+    <mat-select placeholder="Molding Machine" [formControl]="moldingMachine" multiple (selectionChange)="onMoldingMachineSelect($event)">
+      <mat-option (click)="toggleAllSelection()">{{isAllSelected() ? 'Deselect All' : 'Select All'}}</mat-option>
+      <mat-option *ngFor="let moldingMachine of moldingMachines" [value]="moldingMachine">{{moldingMachine.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<mat-divider></mat-divider>
+<mat-table [dataSource]="alarmData" class="mat-elevation-z8" style="overflow: auto;" [style.height]="deviceHeight+'px'">
+  <!-- Position Column -->
+  <ng-container *ngFor="let column of alarmColumnDef" [matColumnDef]="column.key">
+    <mat-header-cell *matHeaderCellDef> {{ column.title }} </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      @if (column.key!='severity'){
+        {{element[column.key]}}
+      } @else {
+        <span [class]="element[column.key]=='CRITICAL'?'text-red-500':'text-orange-500'">{{element[column.key]}}</span>
+      }
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="alarmColumns; sticky: true"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: alarmColumns;"></mat-row>
+</mat-table>
+<mat-paginator style="width: 100%" [length]="totalElements" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+

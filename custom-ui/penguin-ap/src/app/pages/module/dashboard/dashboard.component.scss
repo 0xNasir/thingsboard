@@ -1,0 +1,28 @@
+.flex-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 10px; /* Adds some space between each row */
+}
+.flex-label {
+  flex: 70%; /* Takes up 70% of the container */
+  text-align: left; /* Aligns the text to the left */
+}
+.flex-value {
+  flex: 30%; /* Takes up 30% of the container */
+  text-align: right; /* Aligns the text to the right */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+th {
+
+}
+.left-align {
+  text-align: left;
+}

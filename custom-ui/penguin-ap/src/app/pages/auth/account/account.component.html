@@ -1,0 +1,33 @@
+<section class="profile-form" fxLayout  ngStyle.lt-md="padding: 0;" style="padding: 10px;">
+  <mat-card fxFlex="50" fxFlex.lt-md="100" ngStyle.lt-md="padding: 10px;" style="padding: 50px;">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <p>
+        <mat-form-field style="width: 100%">
+          <mat-label>First name</mat-label>
+          <input matInput type="text" formControlName="firstName" placeholder="First name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <mat-label>Last name</mat-label>
+          <input matInput type="text" formControlName="lastName" placeholder="Last name">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" formControlName="email" placeholder="Email">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field style="width: 100%">
+          <mat-label>Phone Number</mat-label>
+          <input matInput type="text" formControlName="phone" placeholder="Phone number">
+        </mat-form-field>
+      </p>
+      <p style="text-align: right;">
+        <button mat-raised-button color="primary">Save</button>
+      </p>
+    </form>
+  </mat-card>
+</section>

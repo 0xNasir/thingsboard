@@ -1,0 +1,162 @@
+<div fxLayout fxLayout.lt-md="column" fxLayoutGap="7px" fxFlexFill>
+  <div fxFlex="14" fxFlex.lt-md="100">
+    <mat-nav-list>
+      <mat-list-item [activated]="reportLabel=='molding'" (click)="changeRouteParam('molding')">
+        <span matListItemTitle>Molding Report</span>
+        <button mat-icon-button matListItemMeta>
+          <mat-icon>report</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item [activated]="reportLabel=='energy'" (click)="changeRouteParam('energy')">
+        <span matListItemTitle>Energy Report</span>
+        <button mat-icon-button matListItemMeta>
+          <mat-icon>bolt</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </div>
+  <div fxFlex="86" fxFlex.lt-md="100">
+    <div class="report-header">
+      <form *ngIf="form" [formGroup]="form" (ngSubmit)="searchInitiate()">
+        <div class="search-params" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="7px">
+          <mat-form-field subscriptSizing="dynamic">
+            <mat-label>Device</mat-label>
+            <mat-select formControlName="devices">
+              @for (machine of machineList; track machine) {
+                <mat-option [value]="machine">{{ machine.label || machine.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic">
+            <mat-label>Report type</mat-label>
+            <mat-select formControlName="reportType">
+              @for (type of reportType; track type) {
+                <mat-option [value]="type">{{ type }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic"
+                          *ngIf="form.value.reportType=='Hourly'||form.value.reportType=='Daily'">
+            <mat-label>Start date</mat-label>
+            <input matInput [matDatepicker]="spicker" formControlName="startDate" (click)="spicker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="spicker"></mat-datepicker-toggle>
+            <mat-datepicker #spicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic" *ngIf="form.value.reportType=='Monthly'">
+            <mat-label>Start month</mat-label>
+            <input matInput [matDatepicker]="spicker" id="startDate" (click)="spicker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="spicker"></mat-datepicker-toggle>
+            <mat-datepicker startView="year"
+                            (monthSelected)="selectedPicker($event, 'startDate', spicker, 'start', 'YYYY-MM')"
+                            #spicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic" *ngIf="form.value.reportType=='Yearly'">
+            <mat-label>Start year</mat-label>
+            <input matInput [matDatepicker]="spicker" id="startDate" (click)="spicker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="spicker"></mat-datepicker-toggle>
+            <mat-datepicker startView="multi-year"
+                            (yearSelected)="selectedPicker($event, 'startDate', spicker, 'start', 'YYYY')"
+                            #spicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic" *ngIf="form.value.reportType=='Hourly'">
+            <mat-label>Start time</mat-label>
+            <input matInput type="time" formControlName="startTime">
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic"
+                          *ngIf="form.value.reportType=='Hourly'||form.value.reportType=='Daily'">
+            <mat-label>End date</mat-label>
+            <input matInput [matDatepicker]="epicker" formControlName="endDate" (click)="epicker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="epicker"></mat-datepicker-toggle>
+            <mat-datepicker #epicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic" *ngIf="form.value.reportType=='Monthly'">
+            <mat-label>End month</mat-label>
+            <input matInput [matDatepicker]="epicker" id="endDate" (click)="epicker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="epicker"></mat-datepicker-toggle>
+            <mat-datepicker startView="year"
+                            (monthSelected)="selectedPicker($event, 'endDate', epicker, 'end', 'YYYY-MM')"
+                            #epicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic" *ngIf="form.value.reportType=='Yearly'">
+            <mat-label>End year</mat-label>
+            <input matInput [matDatepicker]="epicker" id="endDate" (click)="epicker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="epicker"></mat-datepicker-toggle>
+            <mat-datepicker startView="multi-year"
+                            (yearSelected)="selectedPicker($event, 'endDate', epicker, 'end', 'YYYY')"
+                            #epicker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field subscriptSizing="dynamic" *ngIf="form.value.reportType=='Hourly'">
+            <mat-label>End time</mat-label>
+            <input matInput type="time" formControlName="endTime">
+          </mat-form-field>
+          @if (reportLabel=='molding'){
+            <mat-form-field subscriptSizing="dynamic">
+              <mat-label>Aggregation</mat-label>
+              <mat-select formControlName="aggr">
+                <mat-option [value]="'SUM'">Sum</mat-option>
+                <mat-option [value]="'MinMaxAvg'">Min, Max, Avg</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          }
+
+          <mat-form-field subscriptSizing="dynamic">
+            <mat-label>Data fields</mat-label>
+            <mat-select formControlName="aggField" multiple>
+              <mat-select-trigger>
+                {{form.value?.aggField?.length?form.value?.aggField[0].title : ''}}
+                @if ((form.value?.aggField?.length || 0) > 1) {
+                  <span class="example-additional-selection">
+              (+{{(form.value?.aggField?.length || 0) - 1}} {{form.value?.aggField?.length === 2 ? 'other' : 'others'}})
+            </span>
+                }
+              </mat-select-trigger>
+              @if(reportLabel=='molding'){
+                @if (form.value?.aggr=='SUM'){
+                  @for (field of sumColumn; track field) {
+                    <mat-option [value]="field">{{ field.title }}</mat-option>
+                  }
+                }@else{
+                  @for (field of aggColumn; track field) {
+                    <mat-option [value]="field">{{ field.title }}</mat-option>
+                  }
+                }
+              }@else{
+                @for (field of energyColumn; track field) {
+                  <mat-option [value]="field">{{ field.title }}</mat-option>
+                }
+              }
+            </mat-select>
+          </mat-form-field>
+          <button fxHide.lt-md fxShow mat-icon-button [color]="'accent'">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button fxShow.lt-md fxHide mat-raised-button [color]="'accent'">
+            <mat-icon>search</mat-icon>
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+    <mat-card class="mt-2 p-2 relative" *ngIf="tableData">
+      <div class="absolute top-0 right-1"><button mat-icon-button color="primary" (click)="exportData()"><mat-icon>save</mat-icon></button></div>
+      <div class="reportVisual">
+        <canvas id="reportChart" style="height: 300px;"></canvas>
+      </div>
+      <div class="my-2"><mat-divider></mat-divider></div>
+      <mat-table *ngIf="tableData" [dataSource]="tableData" class="mat-elevation-z8 overflow-auto">
+        <!-- Position Column -->
+        <ng-container *ngFor="let column of tableColumn" [matColumnDef]="column.key">
+          <mat-header-cell *matHeaderCellDef> {{ column.title }}</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element[column.key] }}</mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card>
+  </div>
+</div>

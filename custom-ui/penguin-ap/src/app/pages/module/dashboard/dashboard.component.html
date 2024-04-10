@@ -1,0 +1,90 @@
+
+<div class="wrapper" *ngIf="dashboardCardDatas" style="min-height: 1000px" [style.height]="deviceHeight+'px'" fxLayout="column">
+  <div fxLayout="row wrap" fxLayoutGap="0.5%">
+    <div *ngFor="let dashboardCardData11 of dashboardCardDatas" fxFlex.lt-md="100" fxFlex.md="50" fxFlex="32.83">
+      <mat-card style="min-height:515px; margin-bottom: 7px; cursor: pointer;" (click)="gotoDevice(dashboardCardData11._data?.deviceData)">
+        <mat-card-header>
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+            <div fxLayout="column" fxFlex="100">
+              <div fxFlex="100">
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" style="margin-bottom: 10px">
+                  <span fxFlex="5"><mat-icon [style.color]="dashboardCardData11._data?.deviceData.active?'green':'#f44336'">{{ dashboardCardData11._data?.deviceData.active ? 'check_circle' : 'cancel' }}</mat-icon></span>
+                  <span fxFlex="60" style="font-size: 20px">{{dashboardCardData11._data?.deviceData.label || dashboardCardData11._data?.deviceData.name}}</span>
+                  <span fxFlex="40" style="font-size: 20px; text-align: right;">Mode: {{ dashboardCardData11._data?.macMode?.value }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          @if (showSpin){
+            <div fxLayout fxLayoutAlign="center center"><mat-spinner color="primary" mode="indeterminate"></mat-spinner></div>
+          } @else {
+          <div fxLayout="row" fxLayoutAlign="start center" style="padding: 4px; border: 1px solid black; margin-bottom: 10px;">
+            <div fxLayout="column" fxFlex="100">
+              <div fxFlex="100">
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <span  *ngFor="let headerParam of dashboardCardData11._data?.headerParams" fxFlex="33">{{ headerParam.title }}</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <span  *ngFor="let headerParam of dashboardCardData11._data?.headerParams" fxFlex="33">
+                    <mat-icon *ngIf="headerParam.status" [style.color]="headerParam.status">{{ headerParam.value }}</mat-icon>
+                    <span *ngIf="!headerParam.status" >{{ headerParam.value }}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" style="padding-left:6px" fxLayoutAlign="start center">
+            <div fxLayout="column" fxFlex="60" style="border-right: 1px solid black; margin-right: 10px;">
+              <div fxFlex="100">
+                <div *ngFor="let leftParam of dashboardCardData11._data?.leftParams" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <span fxFlex="70">{{ leftParam.title }}</span>
+                  <span fxFlex="30">{{ leftParam.value }}</span>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="column" fxFlex="40">
+              <div fxFlex="100">
+                <div *ngFor="let rightParam of dashboardCardData11._data?.rightParams" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <span fxFlex="70">{{ rightParam.key }}</span>
+                  <span fxFlex="30">{{ rightParam.value }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table style="text-align: right; margin-top: 20px; width: 100%">
+            <tr>
+              <th class="left-align">Parameter</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Avg</th>
+              <th>Live</th>
+            </tr>
+            <tr *ngFor="let param of dashboardCardData11._data?.params">
+              <td class="left-align">{{ param.title }}</td>
+              <td>{{ param.minval }}</td>
+              <td>{{ param.maxval }}</td>
+              <td>{{ param.avgval }}</td>
+              <td>{{ param.live }}</td>
+            </tr>
+          </table>
+          <div fxLayout="row" fxLayoutAlign="start center" style="margin-top: 5px">
+            <div fxLayout="column" fxFlex="100">
+              <div fxFlex="100">
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <span fxFlex="60">{{ dashboardCardData11._data?.deviceData.active ? 'Last Updated' : 'Downtime' }}</span>
+                  <span fxFlex="40" style="text-align: right;">{{ dashboardCardData11._data?.machineLastUpdateAt ? dashboardCardData11._data!.machineLastUpdateAt.value : 'N/A' }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div style="flex: 1 1 100%;"></div>
+  <mat-paginator style="position: sticky; bottom: 0;width: 100%" [length]="totalElements" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
+
+</div>

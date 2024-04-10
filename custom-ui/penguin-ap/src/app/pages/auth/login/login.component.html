@@ -1,0 +1,42 @@
+<div [style.height]="deviceHeight+'px'" [style.background-color]="theme=='dark'?'#333333':'inherit'" fxLayout
+     fxLayoutAlign="center center">
+  <mat-card fxFlex="40" fxFlex.lt-md="100">
+    <div style="height: 3px;"><mat-progress-bar  mode="query" color="accent" *ngIf="loading$ | async"></mat-progress-bar></div>
+
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form style="padding: 20px 0;" [formGroup]="form" (ngSubmit)="submitLogin()">
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" type="email" formControlName="username">
+            <mat-error *ngIf="form.controls['username']?.errors?.['required']">
+              Email is required.
+            </mat-error>
+            <mat-error *ngIf="form.controls['username']?.errors?.['email']">
+              Invalid email address
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix type="button" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>Password is required</mat-error>
+          </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary" style="width: 100%;">LOGIN</button>
+        <p style="margin-top: 10px;">
+          <a href="" mat-button>Forgot password?</a>
+        </p>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>

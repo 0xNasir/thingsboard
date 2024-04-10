@@ -1,0 +1,173 @@
+/**
+ * Copyright © 2016-2023 The Thingsboard Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+$mat-xs: "screen and (max-width: 599px)";
+$mat-sm: "screen and (min-width: 600px) and (max-width: 959px)";
+$mat-md: "screen and (min-width: 960px) and (max-width: 1279px)";
+$mat-lg: "screen and (min-width: 1280px) and (max-width: 1919px)";
+$mat-xl: "screen and (min-width: 1920px) and (max-width: 5000px)";
+$mat-lt-sm: "screen and (max-width: 599px)";
+$mat-lt-md: "screen and (max-width: 959px)";
+$mat-lt-lg: "screen and (max-width: 1279px)";
+$mat-lt-xl: "screen and (max-width: 1919px)";
+$mat-gt-xs: "screen and (min-width: 600px)";
+$mat-gt-sm: "screen and (min-width: 960px)";
+$mat-gt-md: "screen and (min-width: 1280px)";
+$mat-gt-xmd: "screen and (min-width: 1600px)";
+$mat-gt-xl: "screen and (min-width: 1920px)";
+$mat-md-lg: "screen and (min-width: 960px) and (max-width: 1819px)";
+
+$primary-hue-3: rgb(207, 216, 220) !default;
+
+$tb-primary-color: #424242;
+$tb-secondary-color: #527dad;
+$tb-hue3-color: #a7c1de;
+
+$tb-dark-primary-color: #9fa8da;
+$dark-primary-text: rgba(#000000, 0.87);
+$light-primary-text: white;
+
+$dynamic-theme-primary: (
+  50: var(--theme-primary-50),
+  100: var(--theme-primary-100),
+  200: var(--theme-primary-200),
+  300: var(--theme-primary-300),
+  400: var(--theme-primary-400),
+  500: var(--theme-primary-500),
+  600: var(--theme-primary-600),
+  700: var(--theme-primary-700),
+  800: var(--theme-primary-800),
+  900: var(--theme-primary-900),
+  A100: var(--theme-primary-A100),
+  A200: var(--theme-primary-A200),
+  A400: var(--theme-primary-A400),
+  A700: var(--theme-primary-A700),
+  contrast: (
+    50: var(--theme-primary-contrast-50),
+    100: var(--theme-primary-contrast-100),
+    200: var(--theme-primary-contrast-200),
+    300: var(--theme-primary-contrast-300),
+    400: var(--theme-primary-contrast-400),
+    500: var(--theme-primary-contrast-500),
+    600: var(--theme-primary-contrast-600),
+    700: var(--theme-primary-contrast-700),
+    800: var(--theme-primary-contrast-800),
+    900: var(--theme-primary-contrast-900),
+    A100: var(--theme-primary-contrast-A100),
+    A200: var(--theme-primary-contrast-A200),
+    A400: var(--theme-primary-contrast-A400),
+    A700: var(--theme-primary-contrast-A700)
+  )
+);
+
+$dynamic-theme-accent: (
+  50: var(--theme-accent-50),
+  100: var(--theme-accent-100),
+  200: var(--theme-accent-200),
+  300: var(--theme-accent-300),
+  400: var(--theme-accent-400),
+  500: var(--theme-accent-500),
+  600: var(--theme-accent-600),
+  700: var(--theme-accent-700),
+  800: var(--theme-accent-800),
+  900: var(--theme-accent-900),
+  A100: var(--theme-accent-A100),
+  A200: var(--theme-accent-A200),
+  A400: var(--theme-accent-A400),
+  A700: var(--theme-accent-A700),
+  contrast: (
+    50: var(--theme-accent-contrast-50),
+    100: var(--theme-accent-contrast-100),
+    200: var(--theme-accent-contrast-200),
+    300: var(--theme-accent-contrast-300),
+    400: var(--theme-accent-contrast-400),
+    500: var(--theme-accent-contrast-500),
+    600: var(--theme-accent-contrast-600),
+    700: var(--theme-accent-contrast-700),
+    800: var(--theme-accent-contrast-800),
+    900: var(--theme-accent-contrast-900),
+    A100: var(--theme-accent-contrast-A100),
+    A200: var(--theme-accent-contrast-A200),
+    A400: var(--theme-accent-contrast-A400),
+    A700: var(--theme-accent-contrast-A700)
+  )
+);
+
+$dynamic-theme-warn: (
+  50: var(--theme-warn-50),
+  100: var(--theme-warn-100),
+  200: var(--theme-warn-200),
+  300: var(--theme-warn-300),
+  400: var(--theme-warn-400),
+  500: var(--theme-warn-500),
+  600: var(--theme-warn-600),
+  700: var(--theme-warn-700),
+  800: var(--theme-warn-800),
+  900: var(--theme-warn-900),
+  A100: var(--theme-warn-A100),
+  A200: var(--theme-warn-A200),
+  A400: var(--theme-warn-A400),
+  A700: var(--theme-warn-A700),
+  contrast: (
+    50: var(--theme-warn-contrast-50),
+    100: var(--theme-warn-contrast-100),
+    200: var(--theme-warn-contrast-200),
+    300: var(--theme-warn-contrast-300),
+    400: var(--theme-warn-contrast-400),
+    500: var(--theme-warn-contrast-500),
+    600: var(--theme-warn-contrast-600),
+    700: var(--theme-warn-contrast-700),
+    800: var(--theme-warn-contrast-800),
+    900: var(--theme-warn-contrast-900),
+    A100: var(--theme-warn-contrast-A100),
+    A200: var(--theme-warn-contrast-A200),
+    A400: var(--theme-warn-contrast-A400),
+    A700: var(--theme-warn-contrast-A700)
+  )
+);
+
+
+$tb-dark-mat-indigo: (
+  50: #e8eaf6,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #5c6bc0,
+  500: $tb-dark-primary-color,
+  600: $tb-secondary-color,
+  700: #303f9f,
+  800: $tb-primary-color,
+  900: #343434,
+  A100: $tb-hue3-color,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87),
+  )
+);

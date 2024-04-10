@@ -1,0 +1,150 @@
+{
+  "title": "![90000:dns:OPC UA Client]",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "04bf5617-e2f6-532b-0439-46457c66fd7b": {
+        "isSystemType": false,
+        "bundleAlias": "a_gateway_modules",
+        "typeAlias": "modbus_module_2_opc_static_widget",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 11.5,
+        "sizeY": 7,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "url": "/api",
+            "dbName": "opcgw",
+            "addBtnBgColor": "#0069d9",
+            "addBtnTxtColor": "#ffffff",
+            "deployBtnBgColor": "#cc0000",
+            "deployBtnTxtColor": "#ffffff",
+            "tableHeaderBgColor": "#4c4c4c",
+            "tableHeaderTxtColor": "#ffffff",
+            "tableRowLineColor": "#777777",
+            "disabledPaginationColor": "#000000",
+            "enabledPaginationColor": "#000000"
+          },
+          "title": " OPC static widget",
+          "dropShadow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "04bf5617-e2f6-532b-0439-46457c66fd7b"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "OPC UA Client",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "04bf5617-e2f6-532b-0439-46457c66fd7b": {
+                "sizeX": 24,
+                "sizeY": 10,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "9e544dad-9e4f-0b67-cfb9-ea2948d93b45": {
+        "id": "9e544dad-9e4f-0b67-cfb9-ea2948d93b45",
+        "alias": "a",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "ASSET",
+            "id": "920564a0-1992-11ed-b909-5768cf9e65cd"
+          }
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1672725555699,
+          "endTimeMs": 1672811955699
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": false,
+      "showEntitiesSelect": false,
+      "showDashboardTimewindow": false,
+      "showDashboardExport": false,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)",
+      "showDashboardLogo": false,
+      "dashboardLogoUrl": null,
+      "hideToolbar": false,
+      "showFilters": false,
+      "showUpdateDashboardImage": false
+    }
+  },
+  "name": "![90000:dns:OPC UA Client]"
+}

@@ -1,0 +1,138 @@
+<!--
+
+    Copyright © 2016-2023 The Thingsboard Authors
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<mat-card appearance="outlined" class="settings-card">
+  <mat-card-header fxLayout fxLayoutAlign="space-between center">
+    <mat-card-title>
+      <span class="mat-headline-5">Menu Configuration</span>
+    </mat-card-title>
+    <div>
+      <button mat-raised-button color="primary" (click)="saveMenuToCurrentTenant()">
+        Save to current tenant
+      </button>
+      <button mat-icon-button color="primary" (click)="saveMenu()" [disabled]="selectedCustomer==undefined">
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-progress-bar color="warn" mode="indeterminate" *ngIf="isLoading$ | async">
+  </mat-progress-bar>
+  <div style="height: 4px;" *ngIf="!(isLoading$ | async)"></div>
+  <mat-card-content style="padding-top: 16px;">
+    <div class="container-fluid">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Select a customer</mat-label>
+        <mat-select (selectionChange)="customerSelected($event)">
+          <mat-option *ngFor="let customer of customerList" [value]="customer">{{customer.title || customer.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <ng-template #recursiveList let-list>
+        <mat-list-item
+          class="dndPlaceholder border bg-opacity-25 mb-1"
+          dndPlaceholderRef/>
+
+        <div *ngFor="let item of list" class="">
+          <mat-list-item
+            [dndDraggable]="item"
+            dndEffectAllowed="move"
+            (dndMoved)="onDragged(item, list, 'move')"
+            class="border bg-white ms-n3" [style.height]="editMenuItem?.id==item.id?'100px':'auto'">
+            <span matListItemTitle fxLayout fxLayoutAlign="space-between center"><span fxLayout
+                                                                                       fxLayoutAlign="start center"
+                                                                                       fxLayoutGap="5px"><mat-icon>{{item.icon}}</mat-icon><span>{{item.name|translate}}
+              <span *ngIf="item?.uname">({{item.uname}})</span></span></span><div><button mat-icon-button color="accent" (click)="updateMenuItem(item)"><mat-icon>{{editMenuItem?.id == item.id ? 'save' : 'edit'}}</mat-icon></button><button
+              mat-icon-button color="warn" (click)="removeItemFromMenu(item, list)"><mat-icon>delete</mat-icon></button></div></span>
+            <span matListItemLine *ngIf="editMenuItem?.id==item.id" style="margin-top: 10px" fxLayout fxLayoutGap="5px">
+              <mat-form-field>
+                <mat-label>Icon</mat-label>
+                <input matInput placeholder="Enter icon" [value]="item.icon"
+                       (input)="inputMenuData($event, item.id, 'icon')">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter name" [value]="item.name"
+                       (input)="inputMenuData($event, item.id, 'title')">
+              </mat-form-field>
+            </span>
+          </mat-list-item>
+
+          <mat-list
+            *ngIf="item.pages"
+            (dndDrop)="onDrop($event, item.pages)"
+            class="d-flex flex-column bg-light pt-2 pb-0 ps-2"
+            style="min-height: unset; padding-left: 30px;"
+            dndDropzone
+            dndEffectAllowed="move">
+
+            <ng-container *ngTemplateOutlet="recursiveList; context: { $implicit: item.pages }"/>
+          </mat-list>
+        </div>
+      </ng-template>
+
+      <div fxLayout fxLayout.lt-lg="column">
+        <div fxFlex="25" fxFlex.lt-lg="100" class="px-1">
+          <div class="text-xl bg-cyan-700 p-2 text-white">Available Dashboards</div>
+          <div>
+            <div *ngFor="let preMenu of predefinedMenu">
+              <mat-list>
+                <mat-list-item
+                  class="border bg-white ms-n3" style="position: relative;">
+                  <span matListItemTitle fxLayout fxLayoutAlign="space-between center"><span>{{preMenu.name | translate}}</span><button
+                    mat-icon-button color="primary" style="background-color: transparent;position: absolute; top: 0; right: 0"
+                    (click)="sendPredefinedMenuToMenu(preMenu)"><mat-icon>add</mat-icon></button></span>
+                </mat-list-item>
+              </mat-list>
+            </div>
+            <div *ngFor="let item of dashboards">
+              <mat-list>
+                <mat-list-item
+                  class="border bg-white ms-n3" style="position: relative;">
+                  <span matListItemTitle fxLayout fxLayoutAlign="space-between center"><span>{{item.name}}</span><button
+                    mat-icon-button color="primary" style="background-color: transparent;position: absolute; top: 0; right: 0"
+                    (click)="sendToMenu(item)"><mat-icon>add</mat-icon></button></span>
+                </mat-list-item>
+              </mat-list>
+            </div>
+          </div>
+          <p class="text-slate-400 hover:text-sky-400 text-xs" *ngIf="!dashboards.length">Select a customer to see available dashboards</p>
+          <p class="text-slate-400 hover:text-sky-400 text-xs" *ngIf="dashboards.length">To avail the menu here, assigned the <a
+            routerLink="/dashboards">dashboard</a> to '{{selectedCustomer.name}}' customer.</p>
+        </div>
+        <div fxFlex="50" fxFlex.lt-lg="100" class="px-1">
+          <div class="text-xl bg-cyan-700 p-2 text-white" fxLayout fxLayoutAlign="space-between center"><span>Menu</span>
+            <button mat-icon-button color="primary" (click)="addPageToMenu()"
+                    style="width: 30px; height: 30px; padding: 0;">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <mat-list
+            (dndDrop)="onDrop($event, draggableList)"
+            class="d-flex flex-column bg-light gap-1"
+            dndDropzone
+            dndEffectAllowed="move">
+            <ng-container *ngTemplateOutlet="recursiveList; context: { $implicit: draggableList }"/>
+          </mat-list>
+        </div>
+        <div fxFlex="25" fxFlex.lt-lg="100" style="font-size: 12px" class="px-1">
+          <div class="text-xl bg-cyan-700 p-2 text-white">JSON Schema</div>
+          <pre>{{draggableList | json}}</pre>
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,18 @@
+.hasData:hover{
+  opacity: 0.8;
+}
+.active{
+  background-color: #673ab7;
+}
+mat-header-row{
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.month:hover{
+  background-color: #424242;
+  cursor: pointer;
+  color: white;
+}
+.month.active{
+  background-color: #898989;
+  color: white;
+}

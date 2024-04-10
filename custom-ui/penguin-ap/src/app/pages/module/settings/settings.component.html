@@ -1,0 +1,76 @@
+<mat-tab-group animationDuration="0ms" headerPosition="above" class="snd-tab">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 8px;">alarm</mat-icon>
+      Alarm references
+    </ng-template>
+    <div style="float: right; margin: 5px;">
+      <button mat-raised-button (click)="openDialog('alarm', {}, -1)" color="primary"><mat-icon>add</mat-icon> Add new</button>
+    </div>
+    <mat-table [dataSource]="alarmSettings" class="mat-elevation-z8" style="height: 504px; overflow: auto;">
+      <!-- Position Column -->
+      <ng-container *ngFor="let column of alarmColumns" [matColumnDef]="column.key">
+        <mat-header-cell *matHeaderCellDef> {{ column.title }} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[column.key]}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element;let i = index">
+          <button mat-icon-button (click)="openDialog('alarm', element, i)"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button (click)="deleteData('alarm', element, i)"><mat-icon>delete</mat-icon></button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="alarmDisplayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: alarmDisplayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator style="width: 100%" [length]="totalAlarmElements" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 8px;">settings</mat-icon>
+      Data settings
+    </ng-template>
+    <div style="float: right; margin: 5px;">
+      <button mat-raised-button (click)="openDialog('telemetry', {}, -1)" color="primary"><mat-icon>add</mat-icon> Add new</button>
+    </div>
+    <mat-table [dataSource]="telemetrySettings" class="mat-elevation-z8" style="height: 504px; overflow: auto;">
+      <!-- Position Column -->
+      <ng-container *ngFor="let column of telemetryColumns" [matColumnDef]="column.key">
+        <mat-header-cell *matHeaderCellDef> {{ column.title }} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[column.key]}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element;let i = index"> <button mat-icon-button (click)="openDialog('telemetry', element, i)"><mat-icon>edit</mat-icon></button><button mat-icon-button (click)="deleteData('telemetry', element, i)"><mat-icon>delete</mat-icon></button> </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="telemetryDisplayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: telemetryDisplayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator style="width: 100%" [length]="totalTelemetryElements" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon style="margin-right: 8px;">settings</mat-icon>
+      EM settings
+    </ng-template>
+    <div style="float: right; margin: 5px;">
+      <button mat-raised-button (click)="openDialog('emForm', {}, -1)" color="primary"><mat-icon>add</mat-icon> Add new</button>
+    </div>
+    <mat-table [dataSource]="emSettings" class="mat-elevation-z8" style="height: 504px; overflow: auto;">
+      <!-- Position Column -->
+      <ng-container *ngFor="let column of emColumns" [matColumnDef]="column.key">
+        <mat-header-cell *matHeaderCellDef> {{ column.title }} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element[column.key]}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let element;let i = index"> <button mat-icon-button (click)="openDialog('emForm', element, i)"><mat-icon>edit</mat-icon></button><button mat-icon-button (click)="deleteData('emForm', element, i)"><mat-icon>delete</mat-icon></button> </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="emDisplayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: emDisplayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator style="width: 100%" [length]="totalEMElements" [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+  </mat-tab></mat-tab-group>

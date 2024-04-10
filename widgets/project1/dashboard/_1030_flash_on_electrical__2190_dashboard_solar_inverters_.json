@@ -1,0 +1,4831 @@
+{
+  "title": "[1030:flash_on:Electrical][2190:dashboard:Solar Inverters]",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "9241d724-ee65-8392-2780-9da9a2d84022": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "ts_activePower",
+                  "type": "timeseries",
+                  "label": "Power",
+                  "color": "#ffbb00",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": true,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.2354846609293455,
+                  "units": "kW",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 1,
+            "history": {
+              "historyType": 0,
+              "timewindowMs": 86400000,
+              "interval": 600000,
+              "fixedTimewindow": {
+                "startTimeMs": 1643020424100,
+                "endTimeMs": 1643106824100
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#dedede",
+              "title": "Hours"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#dadada",
+              "tickDecimals": 2,
+              "title": "Power (kW)"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1,
+              "backgroundColor": "#000000"
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            },
+            "smoothLines": true,
+            "tooltipCumulative": false,
+            "hideZeros": false,
+            "customLegendEnabled": true,
+            "dataKeysListForLabels": [
+              {
+                "type": "attribute",
+                "name": "energy",
+                "settings": {}
+              }
+            ],
+            "showTooltip": true,
+            "tooltipValueFormatter": "let x = value.toFixed(2);\r\nlet parts = x.toString().split(\".\");\r\nparts[0] = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\r\nx = parts.join(\".\");\r\nreturn x + \" kW\";"
+          },
+          "title": "Power trend in last 24 hours",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "displayTimewindow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "actions": {
+            "headerButton": []
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9241d724-ee65-8392-2780-9da9a2d84022"
+      },
+      "9c66b70b-3021-174d-8ec4-644dae800672": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 4,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "activePower",
+                  "type": "attribute",
+                  "label": "Power",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.6643867214489929,
+                  "units": "kW",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "0px",
+          "settings": {
+            "maxValue": 1500,
+            "minValue": 0,
+            "donutStartAngle": 90,
+            "showValue": true,
+            "showMinMax": false,
+            "gaugeWidthScale": 0.75,
+            "levelColors": [],
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#999999"
+            },
+            "labelFont": {
+              "family": "Roboto",
+              "size": 8,
+              "style": "normal",
+              "weight": "500",
+              "color": "#ffffff"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 16,
+              "color": "#ffffff"
+            },
+            "minMaxFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500",
+              "color": "#ffffff"
+            },
+            "neonGlowBrightness": 0,
+            "dashThickness": 0,
+            "gaugeColor": "#444444",
+            "showTitle": false,
+            "gaugeType": "arc",
+            "timestampFormat": "yyyy-MM-dd HH:mm:ss",
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear",
+            "roundedLineCap": true,
+            "unitTitle": "kilowatt",
+            "showUnitTitle": false,
+            "useFixedLevelColor": false,
+            "showTicks": false,
+            "tickWidth": 4,
+            "colorTicks": "#666",
+            "showTimestamp": true,
+            "defaultColor": "#ffbb00"
+          },
+          "title": "Power",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "actions": {
+            "headerButton": [
+              {
+                "name": "Meter data",
+                "icon": "dns",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "_meter_data",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "4be32feb-1a8e-1d21-939c-a2319009dd5e"
+              }
+            ]
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9c66b70b-3021-174d-8ec4-644dae800672"
+      },
+      "7eb3944d-e4f1-e798-fdb3-919eae0c34b4": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "voltageAvgLL",
+                  "type": "attribute",
+                  "label": "Voltage",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7806849765290262,
+                  "units": "V",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "7eb3944d-e4f1-e798-fdb3-919eae0c34b4"
+      },
+      "ea051e6e-8dc0-dc5b-8696-f0992cd029ec": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "powerFactor",
+                  "type": "attribute",
+                  "label": "Power Factor",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5896469932850605,
+                  "units": null,
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "ea051e6e-8dc0-dc5b-8696-f0992cd029ec"
+      },
+      "25388922-240f-28c6-1a59-62e4439f1f37": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "comError",
+                  "type": "attribute",
+                  "label": "Communication",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8290766980181337,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'Error':'Okay';"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "25388922-240f-28c6-1a59-62e4439f1f37"
+      },
+      "73b25ee7-2933-f749-2f94-8d6e34b44c16": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "simple_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "sinvOk",
+                  "type": "attribute",
+                  "label": "Health",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.48537049931627596,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==='true'?'Healthy':'Unhealthy';"
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "16px",
+          "settings": {
+            "labelPosition": "top"
+          },
+          "title": "New Simple card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "",
+          "decimals": null,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "73b25ee7-2933-f749-2f94-8d6e34b44c16"
+      },
+      "f98e454e-a277-a215-e681-f14d27a370be": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "timeseries_bars_flot",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "Cost",
+                  "color": "#8bc34a",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.018946315449785756,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 0,
+              "timewindowMs": 43200000,
+              "quickInterval": "CURRENT_DAY",
+              "interval": 3600000
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#b8b8b8",
+              "title": "Time (Hours)"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#b1b1b1",
+              "title": "Energy (BDT)"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": true,
+            "defaultBarWidth": 600,
+            "barAlignment": "right",
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Last 12 hours energy cost",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "actions": {
+            "headerButton": []
+          },
+          "displayTimewindow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "f98e454e-a277-a215-e681-f14d27a370be"
+      },
+      "3d801146-bad8-1944-e6d6-b110e3632193": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "consumption",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 2.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "Today",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5393193229818356,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY",
+              "interval": 3600000
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "numberWithCommas": true
+          },
+          "title": "New Consumption",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "useDashboardTimewindow": false,
+          "displayTimewindow": false,
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3d801146-bad8-1944-e6d6-b110e3632193"
+      },
+      "287be8c2-a1bf-c35c-6c06-4cea8f423625": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "consumption",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 2.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "This week",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.02989895214816385,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 1,
+            "history": {
+              "historyType": 2,
+              "timewindowMs": 60000,
+              "interval": 86400000,
+              "fixedTimewindow": {
+                "startTimeMs": 1622530100471,
+                "endTimeMs": 1622616500471
+              },
+              "quickInterval": "CURRENT_WEEK_SO_FAR"
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "numberWithCommas": true
+          },
+          "title": "New Consumption",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "useDashboardTimewindow": false,
+          "displayTimewindow": false,
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "287be8c2-a1bf-c35c-6c06-4cea8f423625"
+      },
+      "9a23be18-f9fb-34a3-392a-6ac42db89706": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "consumption",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 2.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "This month",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7596467290602344,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_MONTH",
+              "interval": 86400000
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "numberWithCommas": true
+          },
+          "title": "New Consumption",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "useDashboardTimewindow": false,
+          "displayTimewindow": false,
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9a23be18-f9fb-34a3-392a-6ac42db89706"
+      },
+      "57fe95ec-d980-6c4a-64e2-9ed11d275892": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "consumption",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 2.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "This year",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8169252374681004,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_YEAR",
+              "interval": 604800000
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "numberWithCommas": true
+          },
+          "title": "New Consumption",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "useDashboardTimewindow": false,
+          "displayTimewindow": false,
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "57fe95ec-d980-6c4a-64e2-9ed11d275892"
+      },
+      "1031e416-4509-a9ed-540c-ef8c8738a441": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "timeseries_bars_flot",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "Cost",
+                  "color": "#f32121",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.8422067005481697,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_MONTH",
+              "interval": 86400000
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#b4b4b4",
+              "title": "Time (Days)"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#b3b3b3",
+              "title": "Energy cost (BDT)"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": false,
+            "defaultBarWidth": 600,
+            "barAlignment": "left",
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Days in this month",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "actions": {},
+          "displayTimewindow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "1031e416-4509-a9ed-540c-ef8c8738a441"
+      },
+      "bc387d90-5fb4-918d-c8b5-0570e58b7074": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "monthly_data_view_in_year",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "deltaUnitCost",
+                  "type": "timeseries",
+                  "label": "Cost",
+                  "color": "#f32121",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.9878344695947361,
+                  "units": "BDT",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_YEAR",
+              "interval": 86400000
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#b2b2b2",
+              "title": "Time (Months)"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#aeaeae",
+              "title": "Energy cost (BDT)"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": true,
+            "defaultBarWidth": 600,
+            "barAlignment": "left",
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            }
+          },
+          "title": "Months in this year",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "actions": {},
+          "displayTimewindow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "bc387d90-5fb4-918d-c8b5-0570e58b7074"
+      },
+      "83165eac-fd91-f56f-b081-4020f39f4311": {
+        "isSystemType": true,
+        "bundleAlias": "alarm_widgets",
+        "typeAlias": "alarms_table",
+        "type": "alarm",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 10.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 0,
+              "timewindowMs": 2592000000,
+              "quickInterval": "CURRENT_DAY",
+              "interval": 1000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0e2b63",
+          "color": "#ffffff",
+          "padding": "4px",
+          "settings": {
+            "enableSelection": true,
+            "enableSearch": true,
+            "displayDetails": false,
+            "allowAcknowledgment": false,
+            "allowClear": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "-createdTime",
+            "enableSelectColumnDisplay": false,
+            "enableStickyAction": false,
+            "enableFilter": true,
+            "enableStickyHeader": true
+          },
+          "title": "New Alarms table",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "alarmSource": {
+            "type": "entity",
+            "name": null,
+            "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+            "filterId": null,
+            "dataKeys": [
+              {
+                "name": "createdTime",
+                "type": "alarm",
+                "label": "Created time",
+                "color": "#2196f3",
+                "settings": {
+                  "useCellStyleFunction": false,
+                  "cellStyleFunction": "",
+                  "useCellContentFunction": false,
+                  "cellContentFunction": ""
+                },
+                "_hash": 0.021092237451093787
+              },
+              {
+                "name": "type",
+                "type": "alarm",
+                "label": "Type",
+                "color": "#f44336",
+                "settings": {
+                  "useCellStyleFunction": false,
+                  "cellStyleFunction": "",
+                  "useCellContentFunction": false,
+                  "cellContentFunction": ""
+                },
+                "_hash": 0.7323586880398418
+              },
+              {
+                "name": "startTime",
+                "type": "alarm",
+                "label": "Start time",
+                "color": "#ffc107",
+                "settings": {
+                  "columnWidth": "0px",
+                  "useCellStyleFunction": false,
+                  "cellStyleFunction": "",
+                  "useCellContentFunction": false,
+                  "cellContentFunction": "",
+                  "defaultColumnVisibility": "visible",
+                  "columnSelectionToDisplay": "enabled"
+                },
+                "_hash": 0.5870485158377972
+              },
+              {
+                "name": "endTime",
+                "type": "alarm",
+                "label": "End time",
+                "color": "#607d8b",
+                "settings": {
+                  "columnWidth": "0px",
+                  "useCellStyleFunction": false,
+                  "cellStyleFunction": "",
+                  "useCellContentFunction": false,
+                  "cellContentFunction": "",
+                  "defaultColumnVisibility": "visible",
+                  "columnSelectionToDisplay": "enabled"
+                },
+                "_hash": 0.29577090909402637
+              },
+              {
+                "name": "severity",
+                "type": "alarm",
+                "label": "Severity",
+                "color": "#ffc107",
+                "settings": {
+                  "useCellStyleFunction": false,
+                  "useCellContentFunction": false
+                },
+                "_hash": 0.09927019860088193
+              }
+            ]
+          },
+          "alarmSearchStatus": "ANY",
+          "alarmsPollingInterval": 5,
+          "showTitleIcon": false,
+          "titleIcon": "more_horiz",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "displayTimewindow": true,
+          "actions": {
+            "headerButton": []
+          },
+          "alarmStatusList": [],
+          "alarmSeverityList": [],
+          "alarmTypeList": [],
+          "searchPropagatedAlarms": false,
+          "datasources": []
+        },
+        "row": 0,
+        "col": 0,
+        "id": "83165eac-fd91-f56f-b081-4020f39f4311"
+      },
+      "9c92ccc8-ca52-93f1-22a3-78428471fd99": {
+        "isSystemType": false,
+        "bundleAlias": "a_action_widgets",
+        "typeAlias": "button_by_action_descriptors_single_entity",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "Name",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5961363531023163
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0",
+          "settings": {
+            "btnBgColor": "#505050",
+            "btnTxtColor": "#FFFFFF",
+            "iconPosition": "Left"
+          },
+          "title": "New Button By Action Descriptors - Single Entity",
+          "actions": {
+            "selectionListItemClick": [],
+            "dynamicButtonActions": [
+              {
+                "name": "Tariff Setup",
+                "icon": "settings",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "__tariff_setup",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "f857ce37-90d1-da47-2b0c-86fc30246116"
+              }
+            ]
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {
+            "cursor": "default"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "0"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9c92ccc8-ca52-93f1-22a3-78428471fd99"
+      },
+      "1890d33e-0f9d-2d9f-6191-7e84b323292a": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "tarrif_plan_tab_group",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "tariffRateSerrings",
+                  "type": "attribute",
+                  "label": "tariffRateSerrings",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.41437341867367783
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "enableRedundantPrice": true,
+            "defaultHeaderBgColor": "#ef3e36",
+            "defaultHeaderTxtColor": "#ffffff",
+            "defaultHeaderBtnIconColor": "#ffffff",
+            "weekDaysIconColor": "#ef3e36",
+            "inputBoxBorderColor": "#ef3e36",
+            "expansionPanelShadowColor": "#ef3e36"
+          },
+          "title": "New Tarrif plan- tab group",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "1890d33e-0f9d-2d9f-6191-7e84b323292a"
+      },
+      "d148802f-9772-5ff0-2745-678d3360007e": {
+        "isSystemType": false,
+        "bundleAlias": "a_action_widgets",
+        "typeAlias": "button_by_action_descriptors_static",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#777777",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "3px",
+          "settings": {
+            "btnBgColor": "#333333",
+            "btnTxtColor": "#FFFFFF",
+            "iconPosition": "Left"
+          },
+          "title": "Button By Action Descriptors - Static",
+          "actions": {
+            "selectionListItemClick": [],
+            "dynamicButtonActions": [
+              {
+                "name": "Alarms",
+                "icon": "notifications",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "alarm",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "f857ce37-90d1-da47-2b0c-86fc30246116"
+              },
+              {
+                "name": "Notes",
+                "icon": "description",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "__notes",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "8c0cf547-a055-ed97-2c5b-cf4be4e3736a"
+              }
+            ]
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {
+            "cursor": "default"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "0"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "d148802f-9772-5ff0-2745-678d3360007e"
+      },
+      "82080321-a1d0-97d8-4c43-0c48c6a414b6": {
+        "isSystemType": false,
+        "bundleAlias": "a_action_widgets",
+        "typeAlias": "selection_list_by_entity_alias",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7,
+        "sizeY": 2,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "f89c0e7b-170c-990f-1ed2-26f213be4866",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "Name",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.9069460142501229
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "0 15px;",
+          "settings": {
+            "darkMode": true
+          },
+          "title": "New Selection List By Entity Alias",
+          "actions": {
+            "selectionListItemClick": [
+              {
+                "name": "Select a panel from here",
+                "icon": "more_horiz",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "panels-em",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "17bf80cc-eaf7-a7a5-9e2f-0d0004e654de"
+              }
+            ]
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(211,211,211,0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "0"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "82080321-a1d0-97d8-4c43-0c48c6a414b6"
+      },
+      "4e0d798c-5368-3cab-9d38-80d4042f2dfb": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "brief_view",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 11.5,
+        "sizeY": 9.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a4372f6a-c873-2459-b0e8-084acc71442f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "avg_voltage_ll",
+                  "type": "attribute",
+                  "label": "Voltage",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.7416596622516414,
+                  "units": "V",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "avg_current",
+                  "type": "attribute",
+                  "label": "Current",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.1026988985704127,
+                  "units": "A",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "avg_pf",
+                  "type": "attribute",
+                  "label": "PF",
+                  "color": "#03a9f4",
+                  "settings": {},
+                  "_hash": 0.7611575598357003,
+                  "units": null,
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "total_active_power_kw",
+                  "type": "attribute",
+                  "label": "Power",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.6242599819646388,
+                  "units": "kW",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "emComError",
+                  "type": "attribute",
+                  "label": "emComError",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.912947531749001,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"false\"?true:false;"
+                },
+                {
+                  "name": "isConsuming",
+                  "type": "attribute",
+                  "label": "isConsuming",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.5304761765637496,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "emOk",
+                  "type": "attribute",
+                  "label": "emOk",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.519319941294031,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageInRange",
+                  "type": "attribute",
+                  "label": "voltageInRange",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.07862290253407411
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#bfbfbf",
+          "color": "#000000",
+          "padding": "0",
+          "settings": {
+            "dynamicItems": [
+              {
+                "kayword": "avg_voltage_ll"
+              },
+              {
+                "kayword": "avg_current"
+              },
+              {
+                "kayword": "total_active_power_kw"
+              },
+              {
+                "kayword": "avg_pf"
+              }
+            ],
+            "connectionKey": "emOk",
+            "connectionFalseText": "BAD",
+            "statusKey": "isConsuming",
+            "statusTrueText": "Consuming",
+            "statusFalseText": "No load",
+            "bgConnFalseColor": "#111111",
+            "headerTextColor": "#ffffff",
+            "healthKey": "voltageInRange",
+            "healthTrueText": "HEALTHY",
+            "healthFalseText": "UNHEALTHY",
+            "bgHealthTrueStatTrueColor": "#50af47",
+            "bgHealthTrueStatFalseColor": "#afca0b",
+            "bgHealthFalseStatTrueColor": "#afca0b",
+            "bgHealthFalseStatFalseColor": "#afca0b",
+            "connectionTrueText": "GOOD"
+          },
+          "title": "New Brief View",
+          "actions": {
+            "detailsViewButton": [
+              {
+                "name": "details-view",
+                "icon": "open_in_new",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "detail_view",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "4d1fbca9-ea22-4266-b0de-dda5ffd9c163"
+              }
+            ]
+          },
+          "showTitleIcon": false,
+          "iconColor": "#303030",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "4e0d798c-5368-3cab-9d38-80d4042f2dfb"
+      },
+      "4c2870e3-b69a-4b3b-1130-d32070edf186": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "brief_view_only_title_and_color",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 11.5,
+        "sizeY": 9.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a4372f6a-c873-2459-b0e8-084acc71442f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "active",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.14419171059738356
+                },
+                {
+                  "name": "voltageInRange",
+                  "type": "attribute",
+                  "label": "voltageInRange",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.5706233903991758
+                },
+                {
+                  "name": "isConsuming",
+                  "type": "attribute",
+                  "label": "isConsuming",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.12576598991206045
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "connectionKey": "active",
+            "connectionTrueText": "ONLINE",
+            "connectionFalseText": "OFFLINE",
+            "statusKey": "isConsuming",
+            "statusTrueText": "RUNNING",
+            "statusFalseText": "STOPPED",
+            "bgConnFalseColor": "#444444",
+            "headerTextColor": "#ffffff",
+            "healthKey": "voltageInRange",
+            "healthTrueText": "HEALTHY",
+            "healthFalseText": "UNHEALTHY",
+            "bgHealthTrueStatTrueColor": "#19b159",
+            "bgHealthTrueStatFalseColor": "#bf0004",
+            "bgHealthFalseStatTrueColor": "#a1b119",
+            "bgHealthFalseStatFalseColor": "#bf7300"
+          },
+          "title": "New brief view only title and color",
+          "actions": {
+            "detailsViewButton": [
+              {
+                "name": "details-view",
+                "icon": "arrow_forward",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "detail_view",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "4d1fbca9-ea22-4266-b0de-dda5ffd9c163"
+              }
+            ]
+          },
+          "showTitleIcon": false,
+          "iconColor": "#303030",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "4c2870e3-b69a-4b3b-1130-d32070edf186"
+      },
+      "e203bceb-0483-abb2-537d-3c53a3420e8b": {
+        "isSystemType": false,
+        "bundleAlias": "a_action_widgets",
+        "typeAlias": "button_by_action_descriptors_static",
+        "type": "static",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8.5,
+        "sizeY": 2,
+        "config": {
+          "datasources": [],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0",
+          "settings": {
+            "btnBgColor": "#505050",
+            "btnTxtColor": "#FFFFFF",
+            "iconPosition": "Left"
+          },
+          "title": "New Button By Action Descriptors - Static",
+          "actions": {
+            "selectionListItemClick": [],
+            "dynamicButtonActions": [
+              {
+                "name": "Table view",
+                "icon": "border_all",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "table_view",
+                "setEntityId": false,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "f857ce37-90d1-da47-2b0c-86fc30246116"
+              }
+            ]
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {
+            "cursor": "default"
+          },
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "0"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "e203bceb-0483-abb2-537d-3c53a3420e8b"
+      },
+      "9c15711b-0135-384e-0c37-b3e3bc8616a6": {
+        "isSystemType": false,
+        "bundleAlias": "energy_widgets",
+        "typeAlias": "latest_view",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 2.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "ACCurrentAvg",
+                  "type": "attribute",
+                  "label": "Current",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.10703455850660792,
+                  "units": "A",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 1,
+            "history": {
+              "historyType": 2,
+              "timewindowMs": 60000,
+              "interval": 604800000,
+              "fixedTimewindow": {
+                "startTimeMs": 1622264335164,
+                "endTimeMs": 1622350735164
+              },
+              "quickInterval": "CURRENT_YEAR"
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "numberWithCommas": true
+          },
+          "title": "New Latest view",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "showLegend": false,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false
+          },
+          "useDashboardTimewindow": false,
+          "displayTimewindow": false,
+          "units": "Unit",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9c15711b-0135-384e-0c37-b3e3bc8616a6"
+      },
+      "feb0f775-a5d6-a0a5-f79c-1d508518dacb": {
+        "isSystemType": false,
+        "bundleAlias": "a_extra_widget",
+        "typeAlias": "device_attribute22",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 9,
+        "sizeY": 6.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "emNotes",
+                  "type": "attribute",
+                  "label": "emNotes",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.40679916091190504
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#0e2b63",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "btnbgcolor": "#ef7d00",
+            "btntxtcolor": "#ffffff",
+            "attributeName": "stationInfo"
+          },
+          "title": "New Simple Note with Archiver",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "feb0f775-a5d6-a0a5-f79c-1d508518dacb"
+      },
+      "de72334d-0f83-2a6b-6840-8b0d0b80f4ad": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "f5ec8100-bae7-77bd-a19e-0d873ba8e68f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "sinvBrand",
+                  "type": "attribute",
+                  "label": "sinvBrand",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.07933674896238263,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "comError",
+                  "type": "attribute",
+                  "label": "comError",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.17235038254085056,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "reversePower",
+                  "type": "attribute",
+                  "label": "reversePower",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.003635671335516344,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "sinvModel",
+                  "type": "attribute",
+                  "label": "sinvModel",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.18851710702413738,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "sinvOk",
+                  "type": "attribute",
+                  "label": "sinvOk",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.14974487897662114,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "badData",
+                  "type": "attribute",
+                  "label": "badData",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.3940693675371558,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "isConsuming",
+                  "type": "attribute",
+                  "label": "isConsuming",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.658909668262768,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #ef7d00; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "deltaUnitFault",
+                  "type": "attribute",
+                  "label": "deltaUnitFault",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.10005689340334434
+                },
+                {
+                  "name": "em3PhUnbalancedLoad",
+                  "type": "attribute",
+                  "label": "em3PhUnbalancedLoad",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.29876675809066566,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "lastActivityTime",
+                  "type": "attribute",
+                  "label": "lastActivityTime",
+                  "color": "#9e9e9e",
+                  "settings": {},
+                  "_hash": 0.9750361843517896,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return moment(time).format(\"YYYY-MM-DD hh:mm A\");"
+                },
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "Name",
+                  "color": "#2962ff",
+                  "settings": {},
+                  "_hash": 0.16706906704258873
+                },
+                {
+                  "name": "label",
+                  "type": "entityField",
+                  "label": "Label",
+                  "color": "#00c853",
+                  "settings": {},
+                  "_hash": 0.17298316913007117
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "0",
+          "settings": {
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "markdownCss": ".mdcardcustomcss{\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n.mdcardcustomcss table tr:nth-child(even) {\n    background-color: #333;\n}\n\n.mdcardcustomcss table th {\n    display: none;\n}\n",
+            "markdownTextPattern": "\n<div class=\"mdcardcustomcss\">\n\n\n\nParameter     | Value\n-------- | -----\nEnergy-meter ID | ${entityName}\nLocation Name | ${entityLabel}\nLast Activity Time | ${lastActivityTime}\nEnergy-meter Brand | <span style=\"background-color: #00b1eb; padding: 5px;border-radius: 3px;\">__${sinvBrand}__</span>\nEnergy-meter Model | ${sinvModel}\nCommunication Error | ${comError}\nReverse Power | ${reversePower}\nBad Data | ${badData}\nIs Consuming | ${isConsuming}\n3 Phase Unbalanced Load | ${em3PhUnbalancedLoad}\n\n</div>"
+          },
+          "title": "New Markdown Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "0",
+          "actions": {
+            "elementClick": []
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "de72334d-0f83-2a6b-6840-8b0d0b80f4ad"
+      },
+      "0de06e66-2ff1-cd92-84da-21f487fda8d6": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "f5ec8100-bae7-77bd-a19e-0d873ba8e68f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "voltageL1N",
+                  "type": "attribute",
+                  "label": "voltage_an",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8731531510960902,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageL2N",
+                  "type": "attribute",
+                  "label": "voltage_bn",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.31783170162717256,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageL3N",
+                  "type": "attribute",
+                  "label": "voltage_cn",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.4240747551883901,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageAvgLN",
+                  "type": "attribute",
+                  "label": "avg_voltage_ln",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.6575572048847145,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageL1L2",
+                  "type": "attribute",
+                  "label": "voltage_ab",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.15849231422163834,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageL2L3",
+                  "type": "attribute",
+                  "label": "voltage_bc",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.8382572337852585,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageL3L1",
+                  "type": "attribute",
+                  "label": "voltage_ca",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.2479616112266556,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "voltageAvgLL",
+                  "type": "attribute",
+                  "label": "avg_voltage_ll",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.26884647328009614,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "ACCurrentL1",
+                  "type": "attribute",
+                  "label": "current_a",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.13510535901811327,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "ACCurrentL2",
+                  "type": "attribute",
+                  "label": "current_b",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.9501687552703806,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "ACCurrentL3",
+                  "type": "attribute",
+                  "label": "current_c",
+                  "color": "#03a9f4",
+                  "settings": {},
+                  "_hash": 0.9539877351214947,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "current_n",
+                  "type": "attribute",
+                  "label": "current_n",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.6770900088941887,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value;"
+                },
+                {
+                  "name": "ACCurrentAvg",
+                  "type": "attribute",
+                  "label": "avg_current",
+                  "color": "#673ab7",
+                  "settings": {},
+                  "_hash": 0.3959821742945875,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "16px",
+          "settings": {
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "markdownTextPattern": "\n<div class=\"mdcardcustomcss\">\n\n\nParameter     | Value\n-------- | -----\nVoltage A-N | ${voltage_an} V\nVoltage B-N | ${voltage_bn} V\nVoltage C-N | ${voltage_cn} V\nVoltage L-N Avg | ${avg_voltage_ln} V\n\nParameter     | Value\n-------- | -----\nVoltage A-B | ${voltage_ab} V\nVoltage B-C | ${voltage_bc} V\nVoltage C-A | ${voltage_ca} V\nVoltage L-L Avg | ${avg_voltage_ll} V\n\nParameter     | Value\n-------- | -----\nCurrent A | ${current_a} A\nCurrent B | ${current_b} A\nCurrent C | ${current_c} A\nCurrent Avg | ${avg_current} A\n\n\n</div>",
+            "markdownCss": ".mdcardcustomcss{\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n.mdcardcustomcss table tr:nth-child(even) {\n    background-color: #333;\n}\n\n.mdcardcustomcss table th {\n    display: none;\n}\n"
+          },
+          "title": "New Markdown Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0de06e66-2ff1-cd92-84da-21f487fda8d6"
+      },
+      "0de06e66-2ff1-cd92-84da-21f487fda8e7": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "f5ec8100-bae7-77bd-a19e-0d873ba8e68f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "activePower",
+                  "type": "attribute",
+                  "label": "total_active_power_kw",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.37037782403597186,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "reactivePower",
+                  "type": "attribute",
+                  "label": "total_reactive_power_kvar",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.6301822929662542,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "apparentPower",
+                  "type": "attribute",
+                  "label": "total_apparent_power_kva",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.8002616660762181,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "frequency",
+                  "type": "attribute",
+                  "label": "frequency",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.5548599715634925
+                },
+                {
+                  "name": "powerFactor",
+                  "type": "attribute",
+                  "label": "powerFactor",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.7085098804216352
+                },
+                {
+                  "name": "totalEnergy",
+                  "type": "attribute",
+                  "label": "totalEnergy",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.6596962900556234
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "16px",
+          "settings": {
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "markdownTextPattern": "\n<div class=\"mdcardcustomcss\">\n\n\nParameter     | Value\n-------- | -----\nActive Power Total | ${total_active_power_kw} kW\nReactive Power Total | ${total_reactive_power_kvar} kVAR\nApparent Power Total | ${total_apparent_power_kva} kVA\n\nParameter     | Value\n-------- | -----\nFrequency | ${frequency} Hz\nPower Factor Total | ${powerFactor}\nTotal Net Active Energy | ${totalEnergy} kWh\n\n\n</div>",
+            "markdownCss": ".mdcardcustomcss{\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n.mdcardcustomcss table tr:nth-child(even) {\n    background-color: #333;\n}\n\n.mdcardcustomcss table th {\n    display: none;\n}\n"
+          },
+          "title": "New Markdown Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0de06e66-2ff1-cd92-84da-21f487fda8e7"
+      },
+      "0de06e66-2ff1-cd92-84da-21f487fda8a4": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "f5ec8100-bae7-77bd-a19e-0d873ba8e68f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "DCCurrentInput_1",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_1",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.2313039615216015
+                },
+                {
+                  "name": "DCCurrentInput_2",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_2",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.2797554729392906
+                },
+                {
+                  "name": "DCCurrentInput_3",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_3",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.10525621588016709
+                },
+                {
+                  "name": "DCCurrentInput_4",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_4",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.7402013391581816
+                },
+                {
+                  "name": "DCCurrentInput_5",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_5",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.33000432884135145
+                },
+                {
+                  "name": "DCCurrentInput_6",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_6",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.7413840688783473
+                },
+                {
+                  "name": "DCCurrentInput_7",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_7",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.18156537674634676
+                },
+                {
+                  "name": "DCCurrentInput_8",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_8",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.28084459887292224
+                },
+                {
+                  "name": "DCCurrentInput_9",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_9",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.7631275256900982
+                },
+                {
+                  "name": "DCCurrentInput_10",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_10",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.662373683022772
+                },
+                {
+                  "name": "DCCurrentInput_11",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_11",
+                  "color": "#03a9f4",
+                  "settings": {},
+                  "_hash": 0.7279050129487805
+                },
+                {
+                  "name": "DCCurrentInput_12",
+                  "type": "attribute",
+                  "label": "DCCurrentInput_12",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.10115337843956329
+                },
+                {
+                  "name": "DCVoltageInput_1",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_1",
+                  "color": "#673ab7",
+                  "settings": {},
+                  "_hash": 0.24782140402319408
+                },
+                {
+                  "name": "DCVoltageInput_2",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_2",
+                  "color": "#cddc39",
+                  "settings": {},
+                  "_hash": 0.1976893394467436
+                },
+                {
+                  "name": "DCVoltageInput_3",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_3",
+                  "color": "#009688",
+                  "settings": {},
+                  "_hash": 0.7469021145470565
+                },
+                {
+                  "name": "DCVoltageInput_4",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_4",
+                  "color": "#795548",
+                  "settings": {},
+                  "_hash": 0.7734343150235843
+                },
+                {
+                  "name": "DCVoltageInput_5",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_5",
+                  "color": "#00bcd4",
+                  "settings": {},
+                  "_hash": 0.6534012395682138
+                },
+                {
+                  "name": "DCVoltageInput_6",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_6",
+                  "color": "#ff5722",
+                  "settings": {},
+                  "_hash": 0.14235654789772534
+                },
+                {
+                  "name": "DCVoltageInput_7",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_7",
+                  "color": "#9e9e9e",
+                  "settings": {},
+                  "_hash": 0.5934865571812973
+                },
+                {
+                  "name": "DCVoltageInput_8",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_8",
+                  "color": "#2962ff",
+                  "settings": {},
+                  "_hash": 0.23272115366855206
+                },
+                {
+                  "name": "DCVoltageInput_9",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_9",
+                  "color": "#00c853",
+                  "settings": {},
+                  "_hash": 0.6828621638368946
+                },
+                {
+                  "name": "DCVoltageInput_10",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_10",
+                  "color": "#d50000",
+                  "settings": {},
+                  "_hash": 0.939682292658953
+                },
+                {
+                  "name": "DCVoltageInput_11",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_11",
+                  "color": "#ffab00",
+                  "settings": {},
+                  "_hash": 0.49228800849541865
+                },
+                {
+                  "name": "DCVoltageInput_12",
+                  "type": "attribute",
+                  "label": "DCVoltageInput_12",
+                  "color": "#455a64",
+                  "settings": {},
+                  "_hash": 0.430440768935171
+                },
+                {
+                  "name": "DCPowerInput_1",
+                  "type": "attribute",
+                  "label": "DCPowerInput_1",
+                  "color": "#aa00ff",
+                  "settings": {},
+                  "_hash": 0.9978630464833056
+                },
+                {
+                  "name": "DCPowerInput_2",
+                  "type": "attribute",
+                  "label": "DCPowerInput_2",
+                  "color": "#64dd17",
+                  "settings": {},
+                  "_hash": 0.882125906911642
+                },
+                {
+                  "name": "DCPowerInput_3",
+                  "type": "attribute",
+                  "label": "DCPowerInput_3",
+                  "color": "#304ffe",
+                  "settings": {},
+                  "_hash": 0.8159770733966794
+                },
+                {
+                  "name": "DCPowerInput_4",
+                  "type": "attribute",
+                  "label": "DCPowerInput_4",
+                  "color": "#c51162",
+                  "settings": {},
+                  "_hash": 0.7909592368169607
+                },
+                {
+                  "name": "DCPowerInput_5",
+                  "type": "attribute",
+                  "label": "DCPowerInput_5",
+                  "color": "#ffd600",
+                  "settings": {},
+                  "_hash": 0.31849638144084835
+                },
+                {
+                  "name": "DCPowerInput_6",
+                  "type": "attribute",
+                  "label": "DCPowerInput_6",
+                  "color": "#0091ea",
+                  "settings": {},
+                  "_hash": 0.45248280844148314
+                },
+                {
+                  "name": "DCPowerInput_7",
+                  "type": "attribute",
+                  "label": "DCPowerInput_7",
+                  "color": "#ff6d00",
+                  "settings": {},
+                  "_hash": 0.4121868963558688
+                },
+                {
+                  "name": "DCPowerInput_8",
+                  "type": "attribute",
+                  "label": "DCPowerInput_8",
+                  "color": "#6200ea",
+                  "settings": {},
+                  "_hash": 0.03933394712153637
+                },
+                {
+                  "name": "DCPowerInput_9",
+                  "type": "attribute",
+                  "label": "DCPowerInput_9",
+                  "color": "#aeea00",
+                  "settings": {},
+                  "_hash": 0.8639892035763097
+                },
+                {
+                  "name": "DCPowerInput_10",
+                  "type": "attribute",
+                  "label": "DCPowerInput_10",
+                  "color": "#00bfa5",
+                  "settings": {},
+                  "_hash": 0.47841294728006045
+                },
+                {
+                  "name": "DCPowerInput_11",
+                  "type": "attribute",
+                  "label": "DCPowerInput_11",
+                  "color": "#5d4037",
+                  "settings": {},
+                  "_hash": 0.7141449533033302
+                },
+                {
+                  "name": "DCPowerInput_12",
+                  "type": "attribute",
+                  "label": "DCPowerInput_12",
+                  "color": "#00b8d4",
+                  "settings": {},
+                  "_hash": 0.2122282958580466
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "16px",
+          "settings": {
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "markdownTextPattern": "\n<div class=\"mdcardcustomcss\">\n\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_1 | ${DCVoltageInput_1} V\nDCCurrentInput_1 | ${DCCurrentInput_1} A\nDCPowerInput_1   | ${DCPowerInput_1} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_2 | ${DCVoltageInput_2} V\nDCCurrentInput_2 | ${DCCurrentInput_2} A\nDCPowerInput_2   | ${DCPowerInput_2} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_3 | ${DCVoltageInput_3} V\nDCCurrentInput_3 | ${DCCurrentInput_3} A\nDCPowerInput_3   | ${DCPowerInput_3} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_4 | ${DCVoltageInput_4} V\nDCCurrentInput_4 | ${DCCurrentInput_4} A\nDCPowerInput_4   | ${DCPowerInput_4} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_5 | ${DCVoltageInput_5} V\nDCCurrentInput_5 | ${DCCurrentInput_5} A\nDCPowerInput_5   | ${DCPowerInput_5} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_6 | ${DCVoltageInput_6} V\nDCCurrentInput_6 | ${DCCurrentInput_6} A\nDCPowerInput_6   | ${DCPowerInput_6} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_7 | ${DCVoltageInput_7} V\nDCCurrentInput_7 | ${DCCurrentInput_7} A\nDCPowerInput_7   | ${DCPowerInput_7} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_8 | ${DCVoltageInput_8} V\nDCCurrentInput_8 | ${DCCurrentInput_8} A\nDCPowerInput_8   | ${DCPowerInput_8} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_9 | ${DCVoltageInput_9} V\nDCCurrentInput_9 | ${DCCurrentInput_9} A\nDCPowerInput_9   | ${DCPowerInput_9} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_10 | ${DCVoltageInput_10} V\nDCCurrentInput_10 | ${DCCurrentInput_10} A\nDCPowerInput_10   | ${DCPowerInput_10} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_11 | ${DCVoltageInput_11} V\nDCCurrentInput_11 | ${DCCurrentInput_11} A\nDCPowerInput_11   | ${DCPowerInput_11} kW\n\nParameter     | Value\n-------- | -----\nDCVoltageInput_12 | ${DCVoltageInput_12} V\nDCCurrentInput_12 | ${DCCurrentInput_12} A\nDCPowerInput_12   | ${DCPowerInput_12} kW\n\n\n\n</div>",
+            "markdownCss": ".mdcardcustomcss{\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n.mdcardcustomcss table tr:nth-child(even) {\n    background-color: #333;\n}\n\n.mdcardcustomcss table th {\n    display: none;\n}\n"
+          },
+          "title": "New Markdown Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "0de06e66-2ff1-cd92-84da-21f487fda8a4"
+      },
+      "de72334d-0f83-2a6b-6840-8b0d0b80f4eb": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "f5ec8100-bae7-77bd-a19e-0d873ba8e68f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "sinvBrand",
+                  "type": "attribute",
+                  "label": "sinvBrand",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.07933674896238263,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "comError",
+                  "type": "attribute",
+                  "label": "comError",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.17235038254085056,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "reversePower",
+                  "type": "attribute",
+                  "label": "reversePower",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.003635671335516344,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "sinvModel",
+                  "type": "attribute",
+                  "label": "sinvModel",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.18851710702413738,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "sinvOk",
+                  "type": "attribute",
+                  "label": "sinvOk",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.14974487897662114,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "badData",
+                  "type": "attribute",
+                  "label": "badData",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.3940693675371558,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "isConsuming",
+                  "type": "attribute",
+                  "label": "isConsuming",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.658909668262768,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #ef7d00; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "deltaUnitFault",
+                  "type": "attribute",
+                  "label": "deltaUnitFault",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.10005689340334434
+                },
+                {
+                  "name": "em3PhUnbalancedLoad",
+                  "type": "attribute",
+                  "label": "em3PhUnbalancedLoad",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.29876675809066566,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==\"true\"?'<div style=\"background-color: red; padding: 3px; width: 50px;\">YES</div>':'<div style=\"background-color: #50af47; padding: 3px; width: 50px;\">NO</div>';"
+                },
+                {
+                  "name": "lastActivityTime",
+                  "type": "attribute",
+                  "label": "lastActivityTime",
+                  "color": "#9e9e9e",
+                  "settings": {},
+                  "_hash": 0.9750361843517896,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return moment(time).format(\"YYYY-MM-DD hh:mm A\");"
+                },
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "Name",
+                  "color": "#2962ff",
+                  "settings": {},
+                  "_hash": 0.16706906704258873
+                },
+                {
+                  "name": "label",
+                  "type": "entityField",
+                  "label": "Label",
+                  "color": "#00c853",
+                  "settings": {},
+                  "_hash": 0.17298316913007117
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "rgba(255,255,255,0.87)",
+          "padding": "0",
+          "settings": {
+            "markdownTextFunction": "return '# Some title\\n - Entity name: ' + data[0]['entityName'];",
+            "markdownCss": ".mdcardcustomcss{\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n.mdcardcustomcss table tr:nth-child(even) {\n    background-color: #333;\n}\n\n.mdcardcustomcss table th {\n    display: none;\n}\n",
+            "markdownTextPattern": "\n<div class=\"mdcardcustomcss\">\n\n\n\nParameter     | Value\n-------- | -----\nEnergy-meter Brand | <span style=\"background-color: #00b1eb; padding: 5px;border-radius: 3px;\">__${sinvBrand}__</span>\nEnergy-meter Model | ${sinvModel}\nCommunication Error | ${comError}\nReverse Power | ${reversePower}\nBad Data | ${badData}\nIs Consuming | ${isConsuming}\n3 Phase Unbalanced Load | ${em3PhUnbalancedLoad}\n\n</div>"
+          },
+          "title": "New Markdown Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "margin": "0",
+          "actions": {
+            "elementClick": []
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "de72334d-0f83-2a6b-6840-8b0d0b80f4eb"
+      },
+      "072e6cc1-5774-5c32-e7fc-4a228a7f1302": {
+        "isSystemType": true,
+        "bundleAlias": "entity_admin_widgets",
+        "typeAlias": "device_admin_table",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "realtime": {
+              "interval": 1000,
+              "timewindowMs": 86400000
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#0e2b63",
+          "color": "#ffffff",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "displayPagination": true,
+            "defaultPageSize": 20,
+            "defaultSortOrder": "label",
+            "displayEntityName": false,
+            "displayEntityType": false,
+            "entitiesTitle": "Solar Inverters",
+            "enableSelectColumnDisplay": true,
+            "enableStickyHeader": true,
+            "enableStickyAction": false,
+            "displayEntityLabel": false,
+            "useRowStyleFunction": true,
+            "rowStyleFunction": "\nif(entity.AllOk == \"true\"){\n    if(entity.deltaUnitFault == \"true\"){\n        return {\"background-color\" : \"#ef7d00\"};\n    }else{\n        if(entity.isConsuming == \"false\" || entity['3PhUnbalancedLoad'] == \"true\"){\n            return {\"background-color\" : \"#afca0b\"};\n        }else{\n            return {\"background-color\" : \"#50af47\"};\n        }\n    }\n} else {\n    return {\"background-color\" : \"#303030\"};\n}\n\n"
+          },
+          "title": "New Device admin table",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "a4372f6a-c873-2459-b0e8-084acc71442f",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "ID",
+                  "color": "#ffeb3b",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7749285923302471,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "label",
+                  "type": "entityField",
+                  "label": "Title",
+                  "color": "#e91e63",
+                  "settings": {
+                    "columnWidth": "200px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.3317873806763567,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "lastActivityTime",
+                  "type": "attribute",
+                  "label": "lastActivityTime",
+                  "color": "#673ab7",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.9543685610130395,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return moment(time).format(\"YYYY-MM-DD hh:mm:ss A\");"
+                },
+                {
+                  "name": "voltageAvgLL",
+                  "type": "attribute",
+                  "label": "Voltage",
+                  "color": "#673ab7",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7181113804325114,
+                  "units": "V",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "ACCurrentAvg",
+                  "type": "attribute",
+                  "label": "Current",
+                  "color": "#cddc39",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.19420256666896374,
+                  "units": "A",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "powerFactor",
+                  "type": "attribute",
+                  "label": "PF",
+                  "color": "#009688",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.3967192042296628,
+                  "units": null,
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "activePower",
+                  "type": "attribute",
+                  "label": "Power",
+                  "color": "#00bcd4",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.7395800039103622,
+                  "units": "kW",
+                  "decimals": 1,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "sinvOk",
+                  "type": "attribute",
+                  "label": "AllOk",
+                  "color": "#795548",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": true,
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled",
+                    "cellContentFunction": "if (value == \"true\") {\r\n    return '<div style=\"border-radius:50%;background-color:#50E28D;width:18px;height:18px;border:2px solid #FFFFFF\"></div>';\r\n} else {\r\n    return '<div style=\"border-radius:50%;background-color:#B80003;width:18px;height:18px;border:2px solid #FFFFFF\"></div>';\r\n}"
+                  },
+                  "_hash": 0.39092197277112306,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "isConsuming",
+                  "type": "attribute",
+                  "label": "isConsuming",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "useCellContentFunction": false,
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.734476389956066,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": false,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "deltaUnitFault",
+                  "type": "attribute",
+                  "label": "deltaUnitFault",
+                  "color": "#03a9f4",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.6006368259919379,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "badData",
+                  "type": "attribute",
+                  "label": "BadData",
+                  "color": "#ff9800",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.06012708596471206,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "comError",
+                  "type": "attribute",
+                  "label": "comError",
+                  "color": "#673ab7",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.3749196548684006,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "reversePower",
+                  "type": "attribute",
+                  "label": "reversePower",
+                  "color": "#cddc39",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.09734984751440212,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "emBrand",
+                  "type": "attribute",
+                  "label": "emBrand",
+                  "color": "#009688",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.20171671528560364,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "emModel",
+                  "type": "attribute",
+                  "label": "emModel",
+                  "color": "#795548",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.10975067109173309,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "em3PhUnbalancedLoad",
+                  "type": "attribute",
+                  "label": "3PhUnbalancedLoad",
+                  "color": "#9e9e9e",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": false,
+                    "cellContentFunction": "",
+                    "defaultColumnVisibility": "hidden",
+                    "columnSelectionToDisplay": "enabled"
+                  },
+                  "_hash": 0.3356184924326542,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "emStatus",
+                  "type": "attribute",
+                  "label": "emStatus",
+                  "color": "#ff5722",
+                  "settings": {
+                    "columnWidth": "0px",
+                    "useCellStyleFunction": false,
+                    "cellStyleFunction": "",
+                    "useCellContentFunction": true,
+                    "defaultColumnVisibility": "visible",
+                    "columnSelectionToDisplay": "enabled",
+                    "cellContentFunction": "let e=entity;\r\n\r\nlet msg = [];\r\n\r\nif(e.comError=='true'){\r\n    return \"Com.Error\";\r\n} else if(e.BadData=='true'){\r\n    return \"CT-PT WireBreak\";\r\n} else if(e.reversePower=='true'){\r\n    return \"Rev.Power\";\r\n} else if(e.deltaUnitFault=='true'){\r\n    return \"DeltaUnitFault\";\r\n}\r\n\r\n\r\n\r\n//if(e.voltageInRange=='false'){\r\n//    msg.push(\"VoltOutRange\");\r\n//} \r\n\r\n\r\nif(e.isConsuming=='false') {\r\n    msg.push(\"NoConsumption\");\r\n} else {\r\n    \r\n    if(e['3PhUnbalancedLoad']=='true'){\r\n        msg.push(\"3PhLoadUnb.\");\r\n    }\r\n    \r\n    //if(e.emCapacitiveLoad=='true'){\r\n    //    msg.push(\"Cap.Load\");\r\n    //}\r\n}\r\n\r\n\r\nif(msg.length>0){\r\n    return msg.join(\", \");\r\n}else{\r\n    return \"All over okay\"\r\n}"
+                  },
+                  "_hash": 0.9800304893926577,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "showTitleIcon": false,
+          "titleIcon": "more_horiz",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "displayTimewindow": true,
+          "actions": {
+            "headerButton": [],
+            "actionCellButton": [],
+            "rowDoubleClick": [],
+            "rowClick": [
+              {
+                "name": "Details",
+                "icon": "launch",
+                "type": "openDashboardState",
+                "targetDashboardStateId": "detail_view",
+                "setEntityId": true,
+                "stateEntityParamName": null,
+                "openInSeparateDialog": false,
+                "dialogTitle": "",
+                "dialogHideDashboardToolbar": true,
+                "dialogWidth": null,
+                "dialogHeight": null,
+                "openRightLayout": false,
+                "id": "e7283ff0-18b7-f185-17fc-7b2849b6107e"
+              }
+            ]
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "072e6cc1-5774-5c32-e7fc-4a228a7f1302"
+      },
+      "8b7758e3-d823-3e9c-7d43-5b861ddd746c": {
+        "isSystemType": false,
+        "bundleAlias": "a_extra_widget",
+        "typeAlias": "daily_data_view_in_month_whd",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 12,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "ts_deltaUnit",
+                  "type": "timeseries",
+                  "label": "Energy",
+                  "color": "#ffbb00",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.025777910556560313,
+                  "units": "kWh",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 1,
+            "history": {
+              "historyType": 0,
+              "timewindowMs": 60000,
+              "interval": 5000,
+              "fixedTimewindow": {
+                "startTimeMs": 1664016411504,
+                "endTimeMs": 1664102811504
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#b2b2b2",
+              "title": "Days"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#aeaeae",
+              "title": "Energy (kWh)"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": true,
+            "defaultBarWidth": 600,
+            "barAlignment": "right",
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            },
+            "showTooltip": true,
+            "tooltipValueFormatter": "let x = value.toFixed(2);\r\nlet parts = x.toString().split(\".\");\r\nparts[0] = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\r\nx = parts.join(\".\");\r\nreturn x + \" kWh\";"
+          },
+          "title": "Energy consumption in last 30 days",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "actions": {},
+          "displayTimewindow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "8b7758e3-d823-3e9c-7d43-5b861ddd746c"
+      },
+      "4a415183-d7a4-f77f-52c7-2a04488d4feb": {
+        "isSystemType": false,
+        "bundleAlias": "a_extra_widget",
+        "typeAlias": "last_12_months_view_whd",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "ts_deltaUnit",
+                  "type": "timeseries",
+                  "label": "Energy",
+                  "color": "#ffbb00",
+                  "settings": {
+                    "excludeFromStacking": false,
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "showLines": false,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showPointShape": "circle",
+                    "pointShapeFormatter": "var size = radius * Math.sqrt(Math.PI) / 2;\nctx.moveTo(x - size, y - size);\nctx.lineTo(x + size, y + size);\nctx.moveTo(x - size, y + size);\nctx.lineTo(x + size, y - size);",
+                    "showPointsLineWidth": 5,
+                    "showPointsRadius": 3,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue"
+                      }
+                    ],
+                    "comparisonSettings": {
+                      "showValuesForComparison": true
+                    }
+                  },
+                  "_hash": 0.8725985812450323,
+                  "units": "kWh",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 1,
+            "history": {
+              "historyType": 0,
+              "timewindowMs": 60000,
+              "interval": 5000,
+              "fixedTimewindow": {
+                "startTimeMs": 1632592800000,
+                "endTimeMs": 1664128800000
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "SUM",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#b2b2b2",
+              "title": "Months"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#aeaeae",
+              "title": "Energy (kWh)"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "stack": false,
+            "tooltipIndividual": true,
+            "defaultBarWidth": 600,
+            "barAlignment": "right",
+            "timeForComparison": "previousInterval",
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "showLabels": true
+            },
+            "showTooltip": true,
+            "tooltipValueFormatter": "let x = value.toFixed(2);\r\nlet parts = x.toString().split(\".\");\r\nparts[0] = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\");\r\nx = parts.join(\".\");\r\nreturn x + \" kWh\";"
+          },
+          "title": "Energy consumption in last 12 months",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {},
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "actions": {},
+          "displayTimewindow": false,
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "units": "kWh",
+          "decimals": 0
+        },
+        "row": 0,
+        "col": 0,
+        "id": "4a415183-d7a4-f77f-52c7-2a04488d4feb"
+      },
+      "2df7a7d8-6603-cae0-12b5-8fa2e31c021d": {
+        "isSystemType": false,
+        "bundleAlias": "a_extra_widget",
+        "typeAlias": "consumed_whd",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 10,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "This month",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7026875316024841,
+                  "units": "kWh",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "durationType": "thisMonth",
+            "numberWithCommas": true,
+            "apiEndpoint": "/nrdapi/get_monthly_kwh",
+            "defaultStartTime": "06:00:00"
+          },
+          "title": "New Consumed WHD",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "2df7a7d8-6603-cae0-12b5-8fa2e31c021d"
+      },
+      "39d41cef-1bcc-f75b-7cb4-6420f02e04ba": {
+        "isSystemType": false,
+        "bundleAlias": "a_extra_widget",
+        "typeAlias": "consumed_whd",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 10,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "This year",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.6364049132152176,
+                  "units": "kWh",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "durationType": "thisYear",
+            "numberWithCommas": true,
+            "apiEndpoint": "/nrdapi/get_monthly_kwh",
+            "defaultStartTime": "06:00:00"
+          },
+          "title": "New Consumed WHD",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "39d41cef-1bcc-f75b-7cb4-6420f02e04ba"
+      },
+      "9dd80bb4-81d1-4146-51c3-04da0b564e52": {
+        "isSystemType": false,
+        "bundleAlias": "a_extra_widget",
+        "typeAlias": "consumed_whd",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 10,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "active",
+                  "type": "attribute",
+                  "label": "Today",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.2295852548409778,
+                  "units": "kWh",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#111111",
+          "color": "#ffffff",
+          "padding": "8px",
+          "settings": {
+            "labelPosition": "top",
+            "durationType": "today",
+            "numberWithCommas": true,
+            "apiEndpoint": "/nrdapi/get_daily_kwh",
+            "defaultStartTime": "06:00:00"
+          },
+          "title": "New Consumed WHD",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9dd80bb4-81d1-4146-51c3-04da0b564e52"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Energy Monitoring",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "82080321-a1d0-97d8-4c43-0c48c6a414b6": {
+                "sizeX": 21,
+                "sizeY": 1,
+                "row": 0,
+                "col": 0
+              },
+              "4c2870e3-b69a-4b3b-1130-d32070edf186": {
+                "sizeX": 24,
+                "sizeY": 10,
+                "row": 1,
+                "col": 0
+              },
+              "e203bceb-0483-abb2-537d-3c53a3420e8b": {
+                "sizeX": 2,
+                "sizeY": 1,
+                "row": 0,
+                "col": 21
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#303030",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "detail_view": {
+        "name": "${entityLabel} [${entityName}]",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "9241d724-ee65-8392-2780-9da9a2d84022": {
+                "sizeX": 17,
+                "sizeY": 5,
+                "row": 0,
+                "col": 7
+              },
+              "9c66b70b-3021-174d-8ec4-644dae800672": {
+                "sizeX": 7,
+                "sizeY": 4,
+                "row": 1,
+                "col": 0
+              },
+              "7eb3944d-e4f1-e798-fdb3-919eae0c34b4": {
+                "sizeX": 6,
+                "sizeY": 2,
+                "row": 7,
+                "col": 7
+              },
+              "ea051e6e-8dc0-dc5b-8696-f0992cd029ec": {
+                "sizeX": 4,
+                "sizeY": 2,
+                "row": 7,
+                "col": 20
+              },
+              "25388922-240f-28c6-1a59-62e4439f1f37": {
+                "sizeX": 5,
+                "sizeY": 2,
+                "row": 5,
+                "col": 12
+              },
+              "73b25ee7-2933-f749-2f94-8d6e34b44c16": {
+                "sizeX": 5,
+                "sizeY": 2,
+                "row": 5,
+                "col": 7
+              },
+              "d148802f-9772-5ff0-2745-678d3360007e": {
+                "sizeX": 7,
+                "sizeY": 1,
+                "row": 0,
+                "col": 0
+              },
+              "9c15711b-0135-384e-0c37-b3e3bc8616a6": {
+                "sizeX": 7,
+                "sizeY": 2,
+                "row": 7,
+                "col": 13
+              },
+              "de72334d-0f83-2a6b-6840-8b0d0b80f4eb": {
+                "sizeX": 7,
+                "sizeY": 6,
+                "row": 5,
+                "col": 0
+              },
+              "8b7758e3-d823-3e9c-7d43-5b861ddd746c": {
+                "sizeX": 15,
+                "sizeY": 5,
+                "row": 11,
+                "col": 0
+              },
+              "4a415183-d7a4-f77f-52c7-2a04488d4feb": {
+                "sizeX": 9,
+                "sizeY": 5,
+                "row": 11,
+                "col": 15
+              },
+              "2df7a7d8-6603-cae0-12b5-8fa2e31c021d": {
+                "sizeX": 8,
+                "sizeY": 2,
+                "row": 9,
+                "col": 7
+              },
+              "39d41cef-1bcc-f75b-7cb4-6420f02e04ba": {
+                "sizeX": 9,
+                "sizeY": 2,
+                "row": 9,
+                "col": 15
+              },
+              "9dd80bb4-81d1-4146-51c3-04da0b564e52": {
+                "sizeX": 7,
+                "sizeY": 2,
+                "row": 5,
+                "col": 17
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#777777",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margin": 2,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "detail-view-taka": {
+        "name": "Cost view",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "f98e454e-a277-a215-e681-f14d27a370be": {
+                "sizeX": 13,
+                "sizeY": 5,
+                "row": 1,
+                "col": 0
+              },
+              "3d801146-bad8-1944-e6d6-b110e3632193": {
+                "sizeX": 5,
+                "sizeY": 2,
+                "row": 0,
+                "col": 13
+              },
+              "287be8c2-a1bf-c35c-6c06-4cea8f423625": {
+                "sizeX": 6,
+                "sizeY": 2,
+                "row": 0,
+                "col": 18
+              },
+              "9a23be18-f9fb-34a3-392a-6ac42db89706": {
+                "sizeX": 11,
+                "sizeY": 2,
+                "row": 2,
+                "col": 13
+              },
+              "57fe95ec-d980-6c4a-64e2-9ed11d275892": {
+                "sizeX": 11,
+                "sizeY": 2,
+                "row": 4,
+                "col": 13
+              },
+              "1031e416-4509-a9ed-540c-ef8c8738a441": {
+                "sizeX": 14,
+                "sizeY": 6,
+                "row": 6,
+                "col": 0
+              },
+              "bc387d90-5fb4-918d-c8b5-0570e58b7074": {
+                "sizeX": 10,
+                "sizeY": 6,
+                "row": 6,
+                "col": 14
+              },
+              "9c92ccc8-ca52-93f1-22a3-78428471fd99": {
+                "sizeX": 13,
+                "sizeY": 1,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#303030",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margin": 3,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "alarm": {
+        "name": "Alarm",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "83165eac-fd91-f56f-b081-4020f39f4311": {
+                "sizeX": 24,
+                "sizeY": 11,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#303030",
+              "color": "#ffffff",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "__tariff_setup": {
+        "name": "Tariff Setup",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "1890d33e-0f9d-2d9f-6191-7e84b323292a": {
+                "sizeX": 24,
+                "sizeY": 11,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#303030",
+              "color": "rgba(0,0,0,0.870588)",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "panels-em": {
+        "name": "${entityLabel}",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "4e0d798c-5368-3cab-9d38-80d4042f2dfb": {
+                "sizeX": 24,
+                "sizeY": 11,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#303030",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "table_view": {
+        "name": "Live Monitoring",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "072e6cc1-5774-5c32-e7fc-4a228a7f1302": {
+                "sizeX": 24,
+                "sizeY": 11,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#ffffff",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "__notes": {
+        "name": "Notes",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "feb0f775-a5d6-a0a5-f79c-1d508518dacb": {
+                "sizeX": 12,
+                "sizeY": 11,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#777777",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      },
+      "_meter_data": {
+        "name": "Meter data",
+        "root": false,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "de72334d-0f83-2a6b-6840-8b0d0b80f4ad": {
+                "sizeX": 6,
+                "sizeY": 10,
+                "row": 0,
+                "col": 0
+              },
+              "0de06e66-2ff1-cd92-84da-21f487fda8d6": {
+                "sizeX": 6,
+                "sizeY": 10,
+                "row": 0,
+                "col": 6
+              },
+              "0de06e66-2ff1-cd92-84da-21f487fda8e7": {
+                "sizeX": 6,
+                "sizeY": 10,
+                "row": 0,
+                "col": 12
+              },
+              "0de06e66-2ff1-cd92-84da-21f487fda8a4": {
+                "sizeX": 6,
+                "sizeY": 10,
+                "row": 0,
+                "col": 18
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 0,
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": true,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "8064d810-1ba2-7f53-0949-8b8f79e102c6": {
+        "id": "8064d810-1ba2-7f53-0949-8b8f79e102c6",
+        "alias": "Selected-Entity",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      },
+      "a4372f6a-c873-2459-b0e8-084acc71442f": {
+        "id": "a4372f6a-c873-2459-b0e8-084acc71442f",
+        "alias": "All INVs",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceType": "solar-inverter",
+          "deviceNameFilter": ""
+        }
+      },
+      "32457851-b86d-632d-1884-137c2d4b0bb3": {
+        "id": "32457851-b86d-632d-1884-137c2d4b0bb3",
+        "alias": "ems_panels",
+        "filter": {
+          "type": "entityList",
+          "resolveMultiple": true,
+          "entityType": "ASSET",
+          "entityList": [
+            "917041b0-cae8-11ed-8b01-738772f9cc16",
+            "ad472de0-cae8-11ed-8b01-738772f9cc16"
+          ]
+        }
+      },
+      "1a115d04-e3f6-5d4f-e08d-5ccbe42eaaa3": {
+        "id": "1a115d04-e3f6-5d4f-e08d-5ccbe42eaaa3",
+        "alias": "panels_em",
+        "filter": {
+          "type": "deviceSearchQuery",
+          "resolveMultiple": true,
+          "rootStateEntity": true,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null,
+          "rootEntity": null,
+          "direction": "FROM",
+          "maxLevel": 1,
+          "fetchLastLevelOnly": false,
+          "relationType": "Contains",
+          "deviceTypes": [
+            "energy-meter"
+          ]
+        }
+      },
+      "f89c0e7b-170c-990f-1ed2-26f213be4866": {
+        "id": "f89c0e7b-170c-990f-1ed2-26f213be4866",
+        "alias": "ems_panel_wo_all",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetType": "em-panel",
+          "assetNameFilter": ""
+        }
+      },
+      "f5ec8100-bae7-77bd-a19e-0d873ba8e68f": {
+        "id": "f5ec8100-bae7-77bd-a19e-0d873ba8e68f",
+        "alias": "Selected-Entity1",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": "",
+          "defaultStateEntity": null
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "hideInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY",
+        "interval": 1000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      },
+      "timezone": null
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": false,
+      "showEntitiesSelect": false,
+      "showDashboardTimewindow": false,
+      "showDashboardExport": false,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)",
+      "showFilters": false,
+      "showDashboardLogo": false,
+      "dashboardLogoUrl": null,
+      "hideToolbar": false,
+      "showUpdateDashboardImage": false
+    }
+  },
+  "name": "[1030:flash_on:Electrical][2190:dashboard:Solar Inverters]"
+}
